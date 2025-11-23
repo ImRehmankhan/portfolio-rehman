@@ -16,7 +16,7 @@ export default function App({ Component, pageProps }) {
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="google-site-verification" content="YAdXzl60JHaFr0Y0pmgEsZDcMn0Y4m9B9s8TTEnJO24" />
+       
         {/* Preconnect to external domains for faster loading */}
         <link rel="preconnect" href="https://res.cloudinary.com" />
         <link rel="dns-prefetch" href="https://res.cloudinary.com" />
