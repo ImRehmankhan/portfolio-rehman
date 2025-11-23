@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.softoria.tech/sitemap.xml
+# Crawl-delay can be added if needed (not all crawlers respect this)
