@@ -3,7 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { useState } from "react";
-import { Download, Mail, Monitor, Smartphone, Server, Database, Briefcase, Atom, Terminal, Code, FileCode, Paintbrush, Box, Wind, Repeat, ArrowRight, Award, Users, Clock, Rocket, Phone } from "lucide-react";
+import { Download, Mail, Monitor, Smartphone, Server, Database, Briefcase, Atom, Terminal, Code, FileCode, Paintbrush, Box, Wind, Repeat, ArrowRight, Award, Users, Clock, Rocket, Phone, ExternalLink, Github } from "lucide-react";
 
 // Dynamic import for ContactForm to reduce initial bundle
 const ContactForm = dynamic(() => import("@/components/ContactForm"), {
@@ -221,6 +221,8 @@ export default function Home() {
                 description: "A modern e-commerce interface designed for Tulip Shampoo, featuring a complete brand refresh, optimized product presentation, mobile responsiveness, and a clean shopping experience.",
                 img: "https://res.cloudinary.com/dzc11dpii/image/upload/v1763822272/Tulip_Shamoo_Ecom_Website_mock_nazhjz.png",
                 tags: ["Next.js", "HTML5", "CSS3", "JavaScript", "Responsive Design", "UI/UX", "Branding"],
+                liveLink: "https://tulip-shampoo.vercel.app",
+                repo: "https://github.com/ImRehmankhan/Tulip-Shampoo",
               },
               {
                 title: "Footwear Landing Page",
@@ -228,6 +230,8 @@ export default function Home() {
                 description: "A stylish e-commerce landing page crafted for a footwear brand, offering smooth animations, clean layout structure, and full mobile responsiveness for a seamless browsing experience.",
                 img: "https://res.cloudinary.com/dzc11dpii/image/upload/v1763283588/footwear_landing_page_imswyx.png",
                 tags: ["React.js", "HTML5", "CSS3", "Responsive Design"],
+                liveLink: "https://foot-wear-dun.vercel.app/",
+                repo: "https://github.com/ImRehmankhan/footwear-landing",
               },
               {
                 title: "Research Agency",
@@ -235,6 +239,8 @@ export default function Home() {
                 description: "A professional business website created for a research agency, showcasing services, insights, and expertise with a polished layout, intuitive navigation, and responsive behavior.",
                 img: "https://res.cloudinary.com/dzc11dpii/image/upload/v1763283588/Research_Agency_Business_Website_wtgvja.png",
                 tags: ["React.js", "HTML5", "CSS3", "Bootstrap", "Responsive Design"],
+                liveLink: "https://imrehmankhan.github.io/Research_Agency-/",
+                repo: "https://github.com/ImRehmankhan/research-agency-site",
               },
               {
                 title: "BIIT Institute",
@@ -242,6 +248,8 @@ export default function Home() {
                 description: "An educational website built for BIIT Institute featuring course details, admission information, and an easy-to-navigate responsive design suitable for students and parents.",
                 img: "https://res.cloudinary.com/dzc11dpii/image/upload/v1763283587/BIIT_Institute_Educational_Website_kief2w.png",
                 tags: ["React.js", "HTML5", "CSS3", "JavaScript", "Responsive Design"],
+                liveLink: "https://imrehmankhan.github.io/biit.github.io/",
+                repo: "https://github.com/ImRehmankhan/biit-site",
               },
               {
                 title: "TechBlog",
@@ -249,29 +257,44 @@ export default function Home() {
                 description: "A modern blog platform focused on React.js and React Native content, offering featured posts, category browsing, and a clean reading experience with full responsiveness.",
                 img: "https://res.cloudinary.com/dzc11dpii/image/upload/v1763821944/Blog_Tech_mock_cvb9n3.png",
                 tags: ["Next.js", "HTML5", "CSS3", "JavaScript", "Responsive Design", "UI/UX"],
+                liveLink: "",
+                repo: "",
               },
             ].map((project, index) => (
-              <div key={index} className="rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl" style={{ backgroundColor: "var(--surface)", border: "1px solid var(--border)" }}>
-                <div className="relative h-70 md:h-80 sm:h-50 w-full overflow-hidden" style={{ backgroundColor: "var(--input)" }}>
-                  <Image src={project.img} alt={project.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover object-top" loading="lazy" />
-                </div>
-                <div className="p-4 sm:p-6">
-                  <p className="text-xs sm:text-sm mb-2 font-semibold" style={{ color: "var(--primary)" }}>
-                    {project.category}
-                  </p>
-                  <h4 className="text-xl sm:text-2xl font-bold mb-3" style={{ color: "var(--foreground)" }}>
-                    {project.title}
-                  </h4>
-                  <p className="mb-4 leading-relaxed text-sm sm:text-base" style={{ color: "var(--muted-foreground)" }}>
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span key={tag} className="px-3 py-1 rounded-full text-xs font-medium" style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}>
-                        {tag}
-                      </span>
-                    ))}
+              <div key={index} className="flex  flex-col justify-between rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl" style={{ backgroundColor: "var(--surface)", border: "1px solid var(--border)" }}>
+                <div>
+                  <div className="relative h-70 md:h-80 sm:h-50 w-full overflow-hidden" style={{ backgroundColor: "var(--input)" }}>
+                    <Image src={project.img} alt={project.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover object-top" loading="lazy" />
                   </div>
+                  <div className="p-4 sm:p-6">
+                    <p className="text-xs sm:text-sm mb-2 font-semibold" style={{ color: "var(--primary)" }}>
+                      {project.category}
+                    </p>
+                    <h4 className="text-xl sm:text-2xl font-bold mb-3" style={{ color: "var(--foreground)" }}>
+                      {project.title}
+                    </h4>
+                    <p className="mb-4 leading-relaxed text-sm sm:text-base" style={{ color: "var(--muted-foreground)" }}>
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <span key={tag} className="px-3 py-1 rounded-full text-xs font-medium" style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}>
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <div className="flex gap-3 p-5 pt-0">
+                  <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="flex-1 btn-primary inline-flex items-center justify-center gap-2 px-4 py-2 md:text-sm text-[12px]">
+                    <ExternalLink className="w-4 h-4" />
+                    <span >Live Demo</span>
+                  </a>
+
+                  <a href={project.repo} target="_blank" rel="noopener noreferrer" className="flex-1 btn-secondary inline-flex items-center justify-center gap-2 px-4 py-2 text-sm">
+                    <Github className="w-4 h-4" />
+                    <span>GitHub</span>
+                  </a>
                 </div>
               </div>
             ))}
@@ -451,28 +474,36 @@ export default function Home() {
                 features: ["Schema Design", "Normalization", "Query Optimization", "MySQL & MongoDB", "Performance Tuning"],
               },
             ].map((service, index) => (
-              <div key={index} className="p-6 sm:p-8 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-2xl" style={{ backgroundColor: "var(--surface)", border: "1px solid var(--border)" }}>
-                <div className="w-12 h-12 sm:w-16 sm:h-16 mb-4 sm:mb-6 rounded-2xl flex items-center justify-center" style={{ backgroundColor: "var(--primary)" }}>
-                  <service.Icon className="w-6 h-6 sm:w-8 sm:h-8 text-[var(--primary-foreground)]" />
-                </div>
-                <h4 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4" style={{ color: "var(--foreground)" }}>
-                  {service.title}
-                </h4>
-                <p className="mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base" style={{ color: "var(--muted-foreground)" }}>
-                  {service.description}
-                </p>
-                <div className="space-y-2">
-                  <p className="font-semibold mb-3" style={{ color: "var(--primary)" }}>
-                    Key Features
+              <div key={index} className="p-6 sm:p-8 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-end flex-col justify-between " style={{ backgroundColor: "var(--surface)", border: "1px solid var(--border)" }}>
+                <div className=" flex-1">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 mb-4 sm:mb-6 rounded-2xl flex items-center justify-center" style={{ backgroundColor: "var(--primary)" }}>
+                    <service.Icon className="w-6 h-6 sm:w-8 sm:h-8 text-[var(--primary-foreground)]" />
+                  </div>
+                  <h4 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4" style={{ color: "var(--foreground)" }}>
+                    {service.title}
+                  </h4>
+                  <p className="mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base" style={{ color: "var(--muted-foreground)" }}>
+                    {service.description}
                   </p>
-                  {service.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-center gap-2">
-                      <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="var(--primary)" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span style={{ color: "var(--foreground)" }}>{feature}</span>
-                    </div>
-                  ))}
+                  <div className="space-y-2 ">
+                    <p className="font-semibold mb-3" style={{ color: "var(--primary)" }}>
+                      Key Features
+                    </p>
+                    {service.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center gap-2">
+                        <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="var(--primary)" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span style={{ color: "var(--foreground)" }}>{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="mt-4 w-full flex justify-center">
+                  <Link href="/contact" className="btn-primary w-full rounded-2xl px-4 py-2 inline-flex items-center justify-center gap-2   text-sm ">
+                    <Mail className="w-4 h-4" />
+                    <span >Get Quote</span>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -557,14 +588,14 @@ export default function Home() {
       <section className="section bg-[var(--background)]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-          <p className="badge badge--primary text-sm font-semibold mb-2 uppercase tracking-wider text-[var(--primary-foreground)] ">Contact</p>
-          <h3 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: "var(--foreground)" }}>
-            Let's Work <span className="text-gradient text-3xl md:text-4xl font-bold mb-4"> Together</span>
-          </h3>
-          <p className="text-md text-[var(--muted-foreground)]">
-            Have a project in mind? I'd love to hear from you. Send me a message and let's discuss <br /> how we can bring your ideas to life.
-          </p>
-        </div>
+            <p className="badge badge--primary text-sm font-semibold mb-2 uppercase tracking-wider text-[var(--primary-foreground)] ">Contact</p>
+            <h3 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: "var(--foreground)" }}>
+              Let's Work <span className="text-gradient text-3xl md:text-4xl font-bold mb-4"> Together</span>
+            </h3>
+            <p className="text-md text-[var(--muted-foreground)]">
+              Have a project in mind? I'd love to hear from you. Send me a message and let's discuss <br /> how we can bring your ideas to life.
+            </p>
+          </div>
           <ContactForm />
         </div>
       </section>
