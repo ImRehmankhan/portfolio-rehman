@@ -152,7 +152,7 @@ const ContactForm = () => {
           {/* Contact Info */}
           <div className="flex flex-col gap-6">
             {/* Contact Details Box */}
-            <div className="p-8 rounded-2xl flex-1" style={{ backgroundColor: "var(--surface)", border: "1px solid var(--border)" }}>
+            <div className="p-4 md:p-8 rounded-2xl flex-1" style={{ backgroundColor: "var(--surface)", border: "1px solid var(--border)" }}>
               <h4 className="text-2xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
                 Get in Touch
               </h4>
