@@ -52,6 +52,7 @@ export default function Document() {
         
         {/* Verify Ownership (Add your verification codes when available) */}
         {/* <meta name="google-site-verification" content="your-verification-code" /> */}
+   <meta name="google-site-verification" content="YAdXzl60JHaFr0Y0pmgEsZDcMn0Y4m9B9s8TTEnJO24" />
         
         {/* Additional SEO */}
         <meta name="language" content="English" />
