@@ -231,7 +231,7 @@ export default function Home() {
                 img: "https://res.cloudinary.com/dzc11dpii/image/upload/v1763283588/footwear_landing_page_imswyx.png",
                 tags: ["React.js", "HTML5", "CSS3", "Responsive Design"],
                 liveLink: "https://foot-wear-dun.vercel.app/",
-                repo: "https://github.com/ImRehmankhan/footwear-landing",
+                repo: "https://github.com/ImRehmankhan/FootWear",
               },
               {
                 title: "Research Agency",
@@ -240,7 +240,7 @@ export default function Home() {
                 img: "https://res.cloudinary.com/dzc11dpii/image/upload/v1763283588/Research_Agency_Business_Website_wtgvja.png",
                 tags: ["React.js", "HTML5", "CSS3", "Bootstrap", "Responsive Design"],
                 liveLink: "https://imrehmankhan.github.io/Research_Agency-/",
-                repo: "https://github.com/ImRehmankhan/research-agency-site",
+                repo: "https://github.com/ImRehmankhan/Research_Agency-",
               },
               {
                 title: "BIIT Institute",
@@ -249,16 +249,16 @@ export default function Home() {
                 img: "https://res.cloudinary.com/dzc11dpii/image/upload/v1763283587/BIIT_Institute_Educational_Website_kief2w.png",
                 tags: ["React.js", "HTML5", "CSS3", "JavaScript", "Responsive Design"],
                 liveLink: "https://imrehmankhan.github.io/biit.github.io/",
-                repo: "https://github.com/ImRehmankhan/biit-site",
+                repo: "https://github.com/ImRehmankhan/biit.github.io",
               },
               {
-                title: "TechBlog",
+                title: "NextCodeHub",
                 category: "Blog Website",
                 description: "A modern blog platform focused on React.js and React Native content, offering featured posts, category browsing, and a clean reading experience with full responsiveness.",
                 img: "https://res.cloudinary.com/dzc11dpii/image/upload/v1763821944/Blog_Tech_mock_cvb9n3.png",
                 tags: ["Next.js", "HTML5", "CSS3", "JavaScript", "Responsive Design", "UI/UX"],
-                liveLink: "",
-                repo: "",
+                liveLink: "https://nextcodehub.com/",
+                repo: "https://github.com/ImRehmankhan/nextcodehub",
               },
             ].map((project, index) => (
               <div key={index} className="flex  flex-col justify-between rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl" style={{ backgroundColor: "var(--surface)", border: "1px solid var(--border)" }}>
@@ -273,7 +273,7 @@ export default function Home() {
                     <h4 className="text-xl sm:text-2xl font-bold mb-3" style={{ color: "var(--foreground)" }}>
                       {project.title}
                     </h4>
-                    <p className="mb-4 leading-relaxed text-sm sm:text-base" style={{ color: "var(--muted-foreground)" }}>
+                    <p className="mb-4 line-clamp-3 leading-relaxed text-sm sm:text-base" style={{ color: "var(--muted-foreground)" }}>
                       {project.description}
                     </p>
                     <div className="flex flex-wrap gap-2">

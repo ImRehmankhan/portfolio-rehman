@@ -17,8 +17,8 @@ export default function Portfolio() {
       challenges: "Balancing rich visuals with fast load times on mobile devices.",
       results: "Improved conversion-focused UI with faster page loads and clearer product discovery.",
       img: "https://res.cloudinary.com/dzc11dpii/image/upload/v1763822272/Tulip_Shamoo_Ecom_Website_mock_nazhjz.png",
-      demoUrl: "#",
-      codeUrl: "#",
+      demoUrl: "https://tulip-shampoo.vercel.app",
+      codeUrl: "https://github.com/ImRehmankhan/Tulip-Shampoo",
       year: "2024"
     },
     {
@@ -33,8 +33,8 @@ export default function Portfolio() {
       challenges: "Keeping animations smooth while ensuring assets remained small for mobile users.",
       results: "A fast, engaging landing page that increased user engagement and time-on-page.",
       img: "https://res.cloudinary.com/dzc11dpii/image/upload/v1763283588/footwear_landing_page_imswyx.png",
-      demoUrl: "#",
-      codeUrl: "#",
+      demoUrl: "https://foot-wear-dun.vercel.app/",
+      codeUrl: "https://github.com/ImRehmankhan/FootWear",
       year: "2023"
     },
     {
@@ -49,8 +49,8 @@ export default function Portfolio() {
       challenges: "Structuring complex content into clear, scannable sections for site visitors.",
       results: "Improved user clarity and lead inquiries through simplified navigation.",
       img: "https://res.cloudinary.com/dzc11dpii/image/upload/v1763283588/Research_Agency_Business_Website_wtgvja.png",
-      demoUrl: "#",
-      codeUrl: "#",
+      demoUrl: "https://imrehmankhan.github.io/Research_Agency-/",
+      codeUrl: "https://github.com/ImRehmankhan/Research_Agency-",
       year: "2023"
     },
     {
@@ -65,13 +65,13 @@ export default function Portfolio() {
       challenges: "Making complex academic information easy to find for prospective students.",
       results: "A clear, accessible site that improved applicant engagement.",
       img: "https://res.cloudinary.com/dzc11dpii/image/upload/v1763283587/BIIT_Institute_Educational_Website_kief2w.png",
-      demoUrl: "#",
-      codeUrl: "#",
+      demoUrl: "https://imrehmankhan.github.io/biit.github.io/",
+      codeUrl: "https://github.com/ImRehmankhan/biit.github.io",
       year: "2023"
     },
     {
       id: 5,
-      title: "TechBlog",
+      title: "NextCodeHub",
       category: "Blog Website",
       Icon: Monitor,
       description: "A modern blog platform focused on React.js and React Native content, offering featured posts, category browsing, and a clean reading experience with full responsiveness.",
@@ -81,8 +81,8 @@ export default function Portfolio() {
       challenges: "Balancing rich media with fast article load performance.",
       results: "A clean, fast blog that makes content the primary focus.",
       img: "https://res.cloudinary.com/dzc11dpii/image/upload/v1763821944/Blog_Tech_mock_cvb9n3.png",
-      demoUrl: "#",
-      codeUrl: "#",
+      demoUrl: "https://nextcodehub.com/",
+      codeUrl: "https://github.com/ImRehmankhan/nextcodehub",
       year: "2024"
     }
   ];
@@ -155,7 +155,7 @@ export default function Portfolio() {
               {projects.map((project) => (
                 <article 
                   key={project.id}
-                  className="rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                  className="rounded-2xl overflow-hidden transition-all duration-300  hover:shadow-2xl"
                   style={{ backgroundColor: "var(--surface)", border: "1px solid var(--border)" }}
                 >
                   {/* Project Image/Icon */}
