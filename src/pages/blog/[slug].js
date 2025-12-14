@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { Calendar, Clock, User, ArrowLeft, ArrowRight, Tag, Share2, Facebook, Twitter, Linkedin, Link2 } from "lucide-react";
 import { adsenseBlogPosts } from "../../data/adsenseBlogPosts";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function BlogPost() {
   const router = useRouter();
@@ -12,6 +12,65 @@ export default function BlogPost() {
 
   // Find the blog post by slug
   const post = adsenseBlogPosts.find((p) => p.slug === slug);
+
+  // Add copy functionality to code blocks after component mounts
+  useEffect(() => {
+    if (!post) return;
+
+    // Add copy buttons to all code blocks
+    const codeBlocks = document.querySelectorAll('.code-block pre');
+    codeBlocks.forEach((block, index) => {
+      const wrapper = block.closest('.code-block');
+      if (!wrapper) return;
+
+      // Check if header already exists
+      if (wrapper.querySelector('.code-header')) return;
+
+      // Detect language from content or use 'code' as default
+      const code = block.textContent;
+      let language = 'bash';
+      if (code.includes('const ') || code.includes('function ') || code.includes('import ')) {
+        language = 'javascript';
+      } else if (code.includes('SELECT ') || code.includes('FROM ')) {
+        language = 'sql';
+      } else if (code.includes('<') && code.includes('>')) {
+        language = 'html';
+      } else if (code.includes('{') && code.includes('}')) {
+        language = 'json';
+      }
+
+      // Create header with copy button
+      const header = document.createElement('div');
+      header.className = 'code-header';
+      header.innerHTML = `
+        <span class="code-language">${language}</span>
+        <button class="code-copy-btn" data-index="${index}">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          <span class="copy-text">Copy</span>
+        </button>
+      `;
+
+      // Insert header before pre tag
+      wrapper.insertBefore(header, block);
+
+      // Add click event to copy button
+      const copyBtn = header.querySelector('.code-copy-btn');
+      copyBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(block.textContent);
+        const copyText = copyBtn.querySelector('.copy-text');
+        copyBtn.classList.add('copied');
+        copyText.textContent = 'Copied!';
+        
+        setTimeout(() => {
+          copyBtn.classList.remove('copied');
+          copyText.textContent = 'Copy';
+        }, 2000);
+      });
+    });
+  }, [post]);
 
   // Show loading state while router is loading
   if (router.isFallback || !post) {
@@ -55,6 +114,15 @@ export default function BlogPost() {
     setTimeout(() => setCopied(false), 2000);
   };
 
+  // Extract first image from blog content for Open Graph
+  const extractFirstImage = (content) => {
+    const imgRegex = /<img[^>]+src="([^">]+)"/;
+    const match = content.match(imgRegex);
+    return match ? match[1] : 'https://www.softoria.tech/logo.png'; // fallback to logo
+  };
+
+  const featuredImage = post.featuredImage || extractFirstImage(post.content);
+
   return (
     <>
       <Head>
@@ -63,14 +131,27 @@ export default function BlogPost() {
         <meta name="keywords" content={post.tags.join(", ")} />
         <link rel="canonical" href={`https://www.softoria.tech/blog/${post.slug}`} />
         
-        {/* Open Graph */}
+        {/* Open Graph Meta Tags for Facebook */}
         <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="Softoria - Muhammad Rehman Portfolio" />
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.excerpt} />
         <meta property="og:url" content={`https://www.softoria.tech/blog/${post.slug}`} />
+        <meta property="og:image" content={featuredImage} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content={post.title} />
         <meta property="article:published_time" content={post.date} />
         <meta property="article:author" content={post.author} />
         <meta property="article:tag" content={post.tags.join(", ")} />
+        
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@softoria" />
+        <meta name="twitter:title" content={post.title} />
+        <meta name="twitter:description" content={post.excerpt} />
+        <meta name="twitter:image" content={featuredImage} />
+        <meta name="twitter:image:alt" content={post.title} />
         
         {/* Schema Markup */}
         <script
@@ -93,8 +174,8 @@ export default function BlogPost() {
         />
       </Head>
 
-      <main className="section min-h-screen">
-        <div className="max-w-4xl mx-auto">
+      <main className="section min-h-screen px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto w-full">
           {/* Back to Blog Link */}
           <Link 
             href="/blog"
@@ -123,11 +204,11 @@ export default function BlogPost() {
                 )}
               </div>
 
-              <h1 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
                 {post.title}
               </h1>
 
-              <div className="flex flex-wrap items-center gap-4 text-sm mb-6" style={{ color: "var(--muted-foreground)" }}>
+              <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm mb-6" style={{ color: "var(--muted-foreground)" }}>
                 <div className="flex items-center gap-2">
                   <User className="w-4 h-4" />
                   <span>{post.author}</span>
@@ -142,7 +223,7 @@ export default function BlogPost() {
                 </div>
               </div>
 
-              <p className="text-xl leading-relaxed mb-6" style={{ color: "var(--muted-foreground)" }}>
+              <p className="text-lg sm:text-xl leading-relaxed mb-6" style={{ color: "var(--muted-foreground)" }}>
                 {post.excerpt}
               </p>
 
