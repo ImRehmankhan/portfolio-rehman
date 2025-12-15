@@ -8,7 +8,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://www.softoria.tech/</loc>
-    <lastmod>2024-11-22</lastmod>
+    <lastmod>2025-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -16,7 +16,7 @@
   <!-- About Page -->
   <url>
     <loc>https://www.softoria.tech/about</loc>
-    <lastmod>2024-11-22</lastmod>
+    <lastmod>2025-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -24,7 +24,7 @@
   <!-- Services Page -->
   <url>
     <loc>https://www.softoria.tech/services</loc>
-    <lastmod>2024-11-22</lastmod>
+    <lastmod>2025-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -32,7 +32,7 @@
   <!-- Portfolio Page -->
   <url>
     <loc>https://www.softoria.tech/portfolio</loc>
-    <lastmod>2024-11-22</lastmod>
+    <lastmod>2025-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -40,7 +40,7 @@
   <!-- Blog Page -->
   <url>
     <loc>https://www.softoria.tech/blog</loc>
-    <lastmod>2024-11-22</lastmod>
+    <lastmod>2025-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -48,7 +48,7 @@
   <!-- Contact Page -->
   <url>
     <loc>https://www.softoria.tech/contact</loc>
-    <lastmod>2024-11-22</lastmod>
+    <lastmod>2025-12-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -56,7 +56,7 @@
   <!-- Privacy Policy -->
   <url>
     <loc>https://www.softoria.tech/privacy-policy</loc>
-    <lastmod>2024-11-22</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -64,7 +64,7 @@
   <!-- Terms & Conditions -->
   <url>
     <loc>https://www.softoria.tech/terms</loc>
-    <lastmod>2024-11-22</lastmod>
+    <lastmod>2025-11-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -72,7 +72,7 @@
   <!-- Disclaimer -->
   <url>
     <loc>https://www.softoria.tech/disclaimer</loc>
-    <lastmod>2024-11-22</lastmod>
+    <lastmod>2025-11-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -80,14 +80,14 @@
   <!-- Blog Articles -->
   <url>
     <loc>https://www.softoria.tech/blog/building-scalable-web-applications-nextjs-react</loc>
-    <lastmod>2024-11-15</lastmod>
+    <lastmod>2025-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://www.softoria.tech/blog/why-every-business-needs-mobile-app-2024</loc>
-    <lastmod>2024-11-10</lastmod>
+    <lastmod>2025-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -95,6 +95,12 @@
   <url>
     <loc>https://www.softoria.tech/blog/best-practices-database-design-optimization</loc>
     <lastmod>2024-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+   <url>
+    <loc>https://www.softoria.tech/blog/build-rest-api-nodejs-express-tutorial</loc>
+    <lastmod>2024-12-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
