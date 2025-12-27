@@ -2671,7 +2671,7 @@ app.use(cors({
       <p>Now you have the complete roadmap. Go deploy something!</p>
     `,
     author: "Muhammad Rehman",
-    date: "2024-12-27",
+    date: "2025-12-27",
     readTime: "22 min read",
     category: "DevOps & Deployment",
     tags: ["React", "Deployment", "DevOps", "Vercel", "Netlify", "AWS", "CI/CD", "Web Development"],
