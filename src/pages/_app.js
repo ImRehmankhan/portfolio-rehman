@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Head from "next/head";
+import { inter, spaceGrotesk } from "@/utils/fonts";
 
 export default function App({ Component, pageProps }) {
   const themeState = useThemeState();
@@ -21,7 +22,7 @@ export default function App({ Component, pageProps }) {
         <link rel="preconnect" href="https://res.cloudinary.com" />
         <link rel="dns-prefetch" href="https://res.cloudinary.com" />
       </Head>
-      <div className="min-h-screen flex flex-col">
+      <div className={`min-h-screen flex flex-col ${inter.variable} ${spaceGrotesk.variable}`}>
         <Header />
         <main className="flex-1">
           <Component {...pageProps} />

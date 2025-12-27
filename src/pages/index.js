@@ -19,6 +19,14 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href="https://www.softoria.tech/" />
 
+        {/* Preload LCP image for better performance */}
+        <link
+          rel="preload"
+          as="image"
+          href="https://res.cloudinary.com/dzc11dpii/image/upload/v1763179525/Profile_ksskl0.jpg"
+          fetchPriority="high"
+        />
+
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Softoria — Muhammad Rehman | Full‑Stack Developer" />
@@ -119,7 +127,17 @@ export default function Home() {
             {/* Image Column */}
             <div className="flex  items-center justify-center w-full h-full relative">
               <div className="relative w-full max-w-lg aspect-square">
-                <Image src="https://res.cloudinary.com/dzc11dpii/image/upload/v1763179525/Profile_ksskl0.jpg" alt="Muhammad Rehman - React and React Native Developer" fill priority sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px" className="rounded-2xl object-cover object-top shadow-2xl" />
+                <Image 
+                  src="https://res.cloudinary.com/dzc11dpii/image/upload/v1763179525/Profile_ksskl0.jpg" 
+                  alt="Muhammad Rehman - React and React Native Developer" 
+                  fill 
+                  priority 
+                  fetchPriority="high"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px" 
+                  className="rounded-2xl object-cover object-top shadow-2xl"
+                  placeholder="blur"
+                  blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNjAwIiBoZWlnaHQ9IjYwMCIgZmlsbD0iIzE3MTcxNyIvPjwvc3ZnPg=="
+                />
               </div>
             </div>
           </div>

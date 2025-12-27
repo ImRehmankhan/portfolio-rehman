@@ -32,8 +32,8 @@
   --muted: #737373; /* Grey-500 disabled elements */
   --muted-foreground: #d3d1d1; /* Grey-400 disabled text */
 
-  --font-primary: "Inter", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-  --font-heading: "Space Grotesk", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-primary: var(--font-inter), -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-heading: var(--font-space-grotesk), -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
 
   --radius: 8px;
 }
@@ -67,6 +67,26 @@
   --muted-foreground: #605e5e; /* Grey-500 disabled text */
 
   --radius: 8px;
+}
+
+/* Font optimization to prevent layout shift */
+@supports (font-variation-settings: normal) {
+  :root {
+    font-feature-settings: "kern" 1, "liga" 1;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+/* Prevent layout shift for images */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Ensure aspect ratios are maintained */
+img[width][height] {
+  height: auto;
 }
 
 body {

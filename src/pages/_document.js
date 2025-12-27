@@ -5,20 +5,10 @@ export default function Document() {
     <Html lang="en">
       <Head>
         {/* DNS Prefetch for Performance */}
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
         <link rel="dns-prefetch" href="https://res.cloudinary.com" />
         
         {/* Preconnect for Performance */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://res.cloudinary.com" />
-        
-        {/* Google Fonts with display=swap for better performance */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
         
         {/* Favicons and Icons */}
         <link rel="icon" href="https://res.cloudinary.com/dzc11dpii/image/upload/v1763179527/site-logo_cmmgdi.png" />

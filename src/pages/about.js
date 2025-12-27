@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 import { Monitor, Smartphone, Server, Database, Award, Users, Clock, Briefcase, Code, Lightbulb, Target, Heart } from "lucide-react";
 
 export default function About() {
@@ -67,12 +68,17 @@ export default function About() {
           <section className="mb-16 bg-[var(--surface)] p-8 rounded-2xl">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <img 
-                  src="https://res.cloudinary.com/dzc11dpii/image/upload/v1763179525/Profile_ksskl0.jpg" 
-                  alt="Muhammad Rehman - Full-Stack Developer"
-                  className="rounded-2xl shadow-2xl w-full"
-                  loading="lazy"
-                />
+                <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-2xl">
+                  <Image 
+                    src="https://res.cloudinary.com/dzc11dpii/image/upload/v1763179525/Profile_ksskl0.jpg" 
+                    alt="Muhammad Rehman - Full-Stack Developer"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
+                    placeholder="blur"
+                    blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNjAwIiBoZWlnaHQ9IjYwMCIgZmlsbD0iIzE3MTcxNyIvPjwvc3ZnPg=="
+                  />
+                </div>
               </div>
               <div className="space-y-6">
                 <h3 className="text-3xl font-bold mb-4" style={{ color: "var(--foreground)" }}>

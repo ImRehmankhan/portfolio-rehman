@@ -1,6 +1,7 @@
 import { useTheme } from '../hooks/useTheme';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import { Download } from 'lucide-react';
 
@@ -32,7 +33,17 @@ export default function Header() {
         <div className="flex justify-between items-center  h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
-           <img src="https://res.cloudinary.com/dzc11dpii/image/upload/v1763179527/site-logo_cmmgdi.png" alt="Logo" width='100' className='p-2'/>
+            <div className="relative w-[100px] h-[60px]">
+              <Image 
+                src="https://res.cloudinary.com/dzc11dpii/image/upload/v1763179527/site-logo_cmmgdi.png" 
+                alt="Logo" 
+                width={100}
+                height={60}
+                priority
+                className="p-2"
+                style={{ objectFit: 'contain' }}
+              />
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
