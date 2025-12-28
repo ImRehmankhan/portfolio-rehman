@@ -47,7 +47,7 @@ export default function ProjectDetail({ project }) {
       </Head>
 
       {/* Back Button */}
-      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 py-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-4 lg:px-8 py-6">
         <Link
           href="/#portfolio"
           className="inline-flex items-center gap-2 text-[var(--muted-foreground)] hover:text-[var(--primary)] transition-colors"
@@ -55,10 +55,22 @@ export default function ProjectDetail({ project }) {
           <ArrowLeft className="w-4 h-4" />
           <span>Back to Portfolio</span>
         </Link>
+        <div className="text-left mt-4  mx-auto">
+          <p className="text-sm font-semibold  uppercase tracking-wider text-[var(--primary)]">
+            {project.category}
+          </p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-[var(--foreground)]">
+            {project.title}
+          </h1>
+          <p className="text-lg text-[var(--muted-foreground)] leading-relaxed">
+            {project.shortDescription}
+          </p>
+        </div>
       </div>
 
+
       {/* Image Carousel */}
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
         <div className="relative w-full rounded-2xl overflow-hidden bg-[var(--surface)] border border-[var(--border)]">
           {/* Main Image */}
           <div className="relative w-full h-[60vh] md:h-[70vh] bg-[var(--background)]">
@@ -114,19 +126,6 @@ export default function ProjectDetail({ project }) {
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-8">
-            {/* Header */}
-            <div>
-              <p className="text-sm font-semibold mb-2 uppercase tracking-wider text-[var(--primary)]">
-                {project.category}
-              </p>
-              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-[var(--foreground)]">
-                {project.title}
-              </h1>
-              <p className="text-lg text-[var(--muted-foreground)] leading-relaxed">
-                {project.shortDescription}
-              </p>
-            </div>
-
             {/* Action Buttons */}
             <div className="flex flex-wrap gap-4">
               {project.liveLink && (
