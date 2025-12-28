@@ -4,6 +4,7 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import { Download, Mail, Monitor, Smartphone, Server, Database, Briefcase, Atom, Terminal, Code, FileCode, Paintbrush, Box, Wind, Repeat, ArrowRight, Award, Users, Clock, Rocket, Phone, ExternalLink, Github } from "lucide-react";
+import { projectsData } from "@/data/projectsData";
 
 // Dynamic import for ContactForm to reduce initial bundle
 const ContactForm = dynamic(() => import("@/components/ContactForm"), {
@@ -221,7 +222,7 @@ export default function Home() {
       </section>
 
       {/* Section 3: Portfolio */}
-      <section className="section bg-[var(--background)]">
+      <section id="portfolio" className="section bg-[var(--background)]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <p className="badge badge--primary text-sm font-semibold mb-2 uppercase tracking-wider text-[var(--primary-foreground)] "> My Work</p>
@@ -232,57 +233,11 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12">
-            {[
-              {
-                title: "Tulip Shampoo | Brand Refresh & E-commerce UI",
-                category: "E-commerce Website",
-                description: "A modern e-commerce interface designed for Tulip Shampoo, featuring a complete brand refresh, optimized product presentation, mobile responsiveness, and a clean shopping experience.",
-                img: "https://res.cloudinary.com/dzc11dpii/image/upload/v1763822272/Tulip_Shamoo_Ecom_Website_mock_nazhjz.png",
-                tags: ["Next.js", "HTML5", "CSS3", "JavaScript", "Responsive Design", "UI/UX", "Branding"],
-                liveLink: "https://tulip-shampoo.vercel.app",
-                repo: "https://github.com/ImRehmankhan/Tulip-Shampoo",
-              },
-              {
-                title: "Footwear Landing Page",
-                category: "E-commerce Website",
-                description: "A stylish e-commerce landing page crafted for a footwear brand, offering smooth animations, clean layout structure, and full mobile responsiveness for a seamless browsing experience.",
-                img: "https://res.cloudinary.com/dzc11dpii/image/upload/v1763283588/footwear_landing_page_imswyx.png",
-                tags: ["React.js", "HTML5", "CSS3", "Responsive Design"],
-                liveLink: "https://foot-wear-dun.vercel.app/",
-                repo: "https://github.com/ImRehmankhan/FootWear",
-              },
-              {
-                title: "Research Agency",
-                category: "Business Website",
-                description: "A professional business website created for a research agency, showcasing services, insights, and expertise with a polished layout, intuitive navigation, and responsive behavior.",
-                img: "https://res.cloudinary.com/dzc11dpii/image/upload/v1763283588/Research_Agency_Business_Website_wtgvja.png",
-                tags: ["React.js", "HTML5", "CSS3", "Bootstrap", "Responsive Design"],
-                liveLink: "https://imrehmankhan.github.io/Research_Agency-/",
-                repo: "https://github.com/ImRehmankhan/Research_Agency-",
-              },
-              {
-                title: "BIIT Institute",
-                category: "Educational Website",
-                description: "An educational website built for BIIT Institute featuring course details, admission information, and an easy-to-navigate responsive design suitable for students and parents.",
-                img: "https://res.cloudinary.com/dzc11dpii/image/upload/v1763283587/BIIT_Institute_Educational_Website_kief2w.png",
-                tags: ["React.js", "HTML5", "CSS3", "JavaScript", "Responsive Design"],
-                liveLink: "https://imrehmankhan.github.io/biit.github.io/",
-                repo: "https://github.com/ImRehmankhan/biit.github.io",
-              },
-              {
-                title: "NextCodeHub",
-                category: "Blog Website",
-                description: "A modern blog platform focused on React.js and React Native content, offering featured posts, category browsing, and a clean reading experience with full responsiveness.",
-                img: "https://res.cloudinary.com/dzc11dpii/image/upload/v1763821944/Blog_Tech_mock_cvb9n3.png",
-                tags: ["Next.js", "HTML5", "CSS3", "JavaScript", "Responsive Design", "UI/UX"],
-                liveLink: "https://nextcodehub.com/",
-                repo: "https://github.com/ImRehmankhan/nextcodehub",
-              },
-            ].map((project, index) => (
-              <div key={index} className="flex  flex-col justify-between rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl" style={{ backgroundColor: "var(--surface)", border: "1px solid var(--border)" }}>
+            {projectsData.map((project, index) => (
+              <div key={project.id} className="flex flex-col justify-between rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl" style={{ backgroundColor: "var(--surface)", border: "1px solid var(--border)" }}>
                 <div>
                   <div className="relative h-70 md:h-80 sm:h-50 w-full overflow-hidden" style={{ backgroundColor: "var(--input)" }}>
-                    <Image src={project.img} alt={project.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover object-top" loading="lazy" />
+                    <Image src={project.images[project.images.length - 1]} alt={project.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover object-top" loading="lazy" />
                   </div>
                   <div className="p-4 sm:p-6">
                     <p className="text-xs sm:text-sm mb-2 font-semibold" style={{ color: "var(--primary)" }}>
@@ -292,10 +247,10 @@ export default function Home() {
                       {project.title}
                     </h4>
                     <p className="mb-4 line-clamp-3 leading-relaxed text-sm sm:text-base" style={{ color: "var(--muted-foreground)" }}>
-                      {project.description}
+                      {project.shortDescription}
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      {project.tags.map((tag) => (
+                      {project.technologies.slice(0, 5).map((tag) => (
                         <span key={tag} className="px-3 py-1 rounded-full text-xs font-medium" style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}>
                           {tag}
                         </span>
@@ -304,15 +259,10 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex gap-3 p-5 pt-0">
-                  <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="flex-1 btn-primary inline-flex items-center justify-center gap-2 px-4 py-2 md:text-sm text-[12px]">
+                  <Link href={`/portfolio/${project.slug}`} className="w-full btn-primary inline-flex items-center justify-center gap-2 px-4 py-2 md:text-sm text-[12px]">
                     <ExternalLink className="w-4 h-4" />
-                    <span >Live Demo</span>
-                  </a>
-
-                  <a href={project.repo} target="_blank" rel="noopener noreferrer" className="flex-1 btn-secondary inline-flex items-center justify-center gap-2 px-4 py-2 text-sm">
-                    <Github className="w-4 h-4" />
-                    <span>GitHub</span>
-                  </a>
+                    <span>View Details</span>
+                  </Link>
                 </div>
               </div>
             ))}
