@@ -200,5 +200,17 @@ export const blogPosts = [
     category: "Web Development",
     tags: ["Next.js", "React", "Web Development", "Tutorial"],
     featured: true
+  },
+  {
+    id: 2,
+    title: "React Hooks Tutorial: Master useState and useEffect in 2026",
+    slug: "react-hooks-tutorial-usestate-useeffect-beginners-guide",
+    excerpt: "Master React Hooks with this comprehensive tutorial for beginners. Learn useState, useEffect, and custom hooks with real-world examples from 50+ production projects. Avoid common mistakes and write cleaner React code today.",
+    author: "Muhammad Rehman",
+    date: "2026-01-04",
+    readTime: "18 min read",
+    category: "React Development",
+    tags: ["React", "React Hooks", "useState", "useEffect", "JavaScript", "Web Development", "Frontend", "Tutorial", "Beginners"],
+    featured: true
   }
 ];

@@ -83,7 +83,7 @@
   <!-- Blog Page -->
   <url>
     <loc>https://www.softoria.tech/blog</loc>
-    <lastmod>2025-11-22</lastmod>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -137,13 +137,13 @@
   
   <url>
     <loc>https://www.softoria.tech/blog/best-practices-database-design-optimization</loc>
-    <lastmod>2024-11-08</lastmod>
+    <lastmod>2025-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
    <url>
     <loc>https://www.softoria.tech/blog/build-rest-api-nodejs-express-tutorial</loc>
-    <lastmod>2024-12-08</lastmod>
+    <lastmod>2025-12-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -151,6 +151,13 @@
   <url>
     <loc>https://www.softoria.tech/blog/deploy-react-app-production-devops-guide-2025</loc>
     <lastmod>2025-12-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.softoria.tech/blog/react-hooks-tutorial-usestate-useeffect-beginners-guide</loc>
+    <lastmod>2026-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
