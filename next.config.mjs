@@ -27,9 +27,6 @@ const nextConfig = {
     removeConsole: process.env.NODE_ENV === 'production',
   },
   
-  // Optimize production build
-  swcMinify: true,
-  
   // Compress assets
   compress: true,
   
