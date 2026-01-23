@@ -8,8 +8,6 @@ import { adsenseBlogPosts } from "../data/adsenseBlogPosts";
 export default function Blog() {
   const blogPosts = adsenseBlogPosts;
 
-  const categories = ["All", "Web Development", "Mobile Development", "Backend Development"];
-
   return (
     <>
       <Head>

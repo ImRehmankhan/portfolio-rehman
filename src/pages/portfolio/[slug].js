@@ -29,21 +29,83 @@ export default function ProjectDetail({ project }) {
       <Head>
         <title>{project.title} - Portfolio | Softoria</title>
         <meta name="description" content={project.shortDescription} />
+        <meta name="keywords" content={`${project.technologies.join(', ')}, portfolio, web development, ${project.category}`} />
+        <meta name="author" content="Muhammad Rehman" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href={`https://www.softoria.tech/portfolio/${project.slug}`} />
 
         {/* Open Graph */}
         <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="Softoria" />
         <meta property="og:title" content={`${project.title} - Portfolio | Softoria`} />
         <meta property="og:description" content={project.shortDescription} />
         <meta property="og:url" content={`https://www.softoria.tech/portfolio/${project.slug}`} />
         <meta property="og:image" content={project.images[0]} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content={project.title} />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@softoria" />
+        <meta name="twitter:creator" content="@muhammadrehman" />
         <meta name="twitter:title" content={`${project.title} - Portfolio | Softoria`} />
         <meta name="twitter:description" content={project.shortDescription} />
         <meta name="twitter:image" content={project.images[0]} />
+        <meta name="twitter:image:alt" content={project.title} />
+        
+        {/* Breadcrumb Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://www.softoria.tech/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Portfolio",
+                  "item": "https://www.softoria.tech/portfolio"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": project.title,
+                  "item": `https://www.softoria.tech/portfolio/${project.slug}`
+                }
+              ]
+            })
+          }}
+        />
+        
+        {/* Creative Work Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "CreativeWork",
+              "name": project.title,
+              "description": project.shortDescription,
+              "image": project.images,
+              "creator": {
+                "@type": "Person",
+                "name": "Muhammad Rehman",
+                "url": "https://www.softoria.tech/about"
+              },
+              "keywords": project.technologies.join(', '),
+              "url": `https://www.softoria.tech/portfolio/${project.slug}`,
+              "inLanguage": "en-US"
+            })
+          }}
+        />
       </Head>
 
       {/* Back Button */}

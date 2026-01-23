@@ -6,15 +6,29 @@ export default function Document() {
       <Head>
         {/* DNS Prefetch for Performance */}
         <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+        <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
         
         {/* Preconnect for Performance */}
         <link rel="preconnect" href="https://res.cloudinary.com" />
+        <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossOrigin="anonymous" />
+        
+        {/* Google AdSense - Add your AdSense code here when approved */}
+        {process.env.NEXT_PUBLIC_ADSENSE_ID && (
+          <script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_ID}`}
+            crossOrigin="anonymous"
+          />
+        )}
         
         {/* Favicons and Icons */}
         <link rel="icon" href="https://res.cloudinary.com/dzc11dpii/image/upload/v1763179527/site-logo_cmmgdi.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="https://res.cloudinary.com/dzc11dpii/image/upload/v1763179527/site-logo_cmmgdi.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/dzc11dpii/image/upload/v1763179527/site-logo_cmmgdi.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="https://res.cloudinary.com/dzc11dpii/image/upload/v1763179527/site-logo_cmmgdi.png" />
+        
+        {/* Manifest for PWA */}
+        <link rel="manifest" href="/manifest.json" />
         
         {/* Theme Color for Mobile Browsers */}
         <meta name="theme-color" content="#0ea5a4" />
@@ -40,9 +54,8 @@ export default function Document() {
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <meta name="googlebot" content="index, follow" />
         
-        {/* Verify Ownership (Add your verification codes when available) */}
-        {/* <meta name="google-site-verification" content="your-verification-code" /> */}
-   <meta name="google-site-verification" content="YAdXzl60JHaFr0Y0pmgEsZDcMn0Y4m9B9s8TTEnJO24" />
+        {/* Verify Ownership */}
+        <meta name="google-site-verification" content="YAdXzl60JHaFr0Y0pmgEsZDcMn0Y4m9B9s8TTEnJO24" />
         
         {/* Additional SEO */}
         <meta name="language" content="English" />

@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { Calendar, Clock, User, ArrowLeft, ArrowRight, Tag, Share2, Facebook, Twitter, Linkedin, Link2 } from "lucide-react";
+import { Calendar, Clock, User, ArrowLeft, ArrowRight, Tag, Share2, Facebook, Twitter, Linkedin, Link2, BookOpen } from "lucide-react";
 import { adsenseBlogPosts } from "../../data/adsenseBlogPosts";
 import { useState, useEffect } from "react";
 
@@ -129,6 +129,7 @@ export default function BlogPost() {
         <title>{post.title} | Muhammad Rehman Blog</title>
         <meta name="description" content={post.excerpt} />
         <meta name="keywords" content={post.tags.join(", ")} />
+        <meta name="author" content={post.author} />
         <link rel="canonical" href={`https://www.softoria.tech/blog/${post.slug}`} />
         
         {/* Open Graph Meta Tags for Facebook */}
@@ -142,18 +143,54 @@ export default function BlogPost() {
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content={post.title} />
         <meta property="article:published_time" content={post.date} />
+        <meta property="article:modified_time" content={post.date} />
         <meta property="article:author" content={post.author} />
-        <meta property="article:tag" content={post.tags.join(", ")} />
+        <meta property="article:section" content={post.category} />
+        {post.tags.map(tag => (
+          <meta key={tag} property="article:tag" content={tag} />
+        ))}
         
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@softoria" />
+        <meta name="twitter:creator" content="@muhammadrehman" />
         <meta name="twitter:title" content={post.title} />
         <meta name="twitter:description" content={post.excerpt} />
         <meta name="twitter:image" content={featuredImage} />
         <meta name="twitter:image:alt" content={post.title} />
         
-        {/* Schema Markup */}
+        {/* Breadcrumb Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://www.softoria.tech/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Blog",
+                  "item": "https://www.softoria.tech/blog"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": post.title,
+                  "item": `https://www.softoria.tech/blog/${post.slug}`
+                }
+              ]
+            })
+          }}
+        />
+        
+        {/* Article Schema Markup */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -162,13 +199,31 @@ export default function BlogPost() {
               "@type": "BlogPosting",
               "headline": post.title,
               "description": post.excerpt,
+              "image": featuredImage,
+              "datePublished": post.date,
+              "dateModified": post.date,
               "author": {
                 "@type": "Person",
-                "name": post.author
+                "name": post.author,
+                "url": "https://www.softoria.tech/about"
               },
-              "datePublished": post.date,
+              "publisher": {
+                "@type": "Organization",
+                "name": "Softoria",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://res.cloudinary.com/dzc11dpii/image/upload/v1763179527/site-logo_cmmgdi.png"
+                }
+              },
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": `https://www.softoria.tech/blog/${post.slug}`
+              },
               "keywords": post.tags.join(", "),
-              "articleBody": post.excerpt
+              "articleSection": post.category,
+              "wordCount": post.content.split(' ').length,
+              "articleBody": post.excerpt,
+              "inLanguage": "en-US"
             })
           }}
         />
@@ -323,30 +378,52 @@ export default function BlogPost() {
 
               {/* Related Posts */}
               {relatedPosts.length > 0 && (
-                <div className="mb-8">
-                  <h3 className="text-2xl font-bold mb-6" style={{ color: "var(--foreground)" }}>
-                    Related Articles
-                  </h3>
+                <div className="mb-8 p-8 rounded-2xl" style={{ backgroundColor: "var(--surface)", border: "2px solid var(--primary)" }}>
+                  <div className="flex items-center gap-3 mb-6">
+                    <BookOpen className="w-6 h-6" style={{ color: "var(--primary)" }} />
+                    <h3 className="text-2xl md:text-3xl font-bold" style={{ color: "var(--foreground)" }}>
+                      Continue Reading
+                    </h3>
+                  </div>
+                  <p className="mb-6" style={{ color: "var(--muted-foreground)" }}>
+                    Explore more articles on {post.category} and related topics
+                  </p>
                   <div className="grid md:grid-cols-3 gap-6">
                     {relatedPosts.map((relatedPost) => (
                       <Link
                         key={relatedPost.id}
                         href={`/blog/${relatedPost.slug}`}
-                        className="p-4 rounded-lg transition-all duration-300 hover:scale-105"
-                        style={{ backgroundColor: "var(--surface)", border: "1px solid var(--border)" }}
+                        className="p-6 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                        style={{ backgroundColor: "var(--background)", border: "1px solid var(--border)" }}
                       >
-                        <h4 className="font-bold mb-2 line-clamp-2" style={{ color: "var(--foreground)" }}>
+                        <div className="flex items-center gap-2 mb-3">
+                          <Tag className="w-4 h-4" style={{ color: "var(--primary)" }} />
+                          <span className="text-xs font-semibold" style={{ color: "var(--primary)" }}>
+                            {relatedPost.category}
+                          </span>
+                        </div>
+                        <h4 className="font-bold mb-3 line-clamp-2 text-lg" style={{ color: "var(--foreground)" }}>
                           {relatedPost.title}
                         </h4>
-                        <p className="text-sm mb-2 line-clamp-2" style={{ color: "var(--muted-foreground)" }}>
+                        <p className="text-sm mb-4 line-clamp-3" style={{ color: "var(--muted-foreground)" }}>
                           {relatedPost.excerpt}
                         </p>
-                        <div className="flex items-center gap-2 text-sm" style={{ color: "var(--primary)" }}>
-                          <span>Read More</span>
+                        <div className="flex items-center gap-2 text-sm font-semibold" style={{ color: "var(--primary)" }}>
+                          <span>Read Article</span>
                           <ArrowRight className="w-4 h-4" />
                         </div>
                       </Link>
                     ))}
+                  </div>
+                  <div className="mt-8 text-center">
+                    <Link 
+                      href="/blog"
+                      className="inline-flex items-center gap-2 text-sm font-semibold transition-all duration-300 hover:gap-3"
+                      style={{ color: "var(--primary)" }}
+                    >
+                      <span>Browse All Articles</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
                   </div>
                 </div>
               )}

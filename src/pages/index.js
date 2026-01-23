@@ -3,8 +3,9 @@ import Head from "next/head";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { useState } from "react";
-import { Download, Mail, Monitor, Smartphone, Server, Database, Briefcase, Atom, Terminal, Code, FileCode, Paintbrush, Box, Wind, Repeat, ArrowRight, Award, Users, Clock, Rocket, Phone, ExternalLink, Github } from "lucide-react";
+import { Download, Mail, Monitor, Smartphone, Server, Database, Briefcase, Atom, Terminal, Code, FileCode, Paintbrush, Box, Wind, Repeat, ArrowRight, Award, Users, Clock, Rocket, Phone, ExternalLink, Github, BookOpen, Calendar } from "lucide-react";
 import { projectsData } from "@/data/projectsData";
+import { adsenseBlogPosts } from "@/data/adsenseBlogPosts";
 
 // Dynamic import for ContactForm to reduce initial bundle
 const ContactForm = dynamic(() => import("@/components/ContactForm"), {
@@ -188,7 +189,7 @@ export default function Home() {
     leading-snug
     text-[var(--muted-foreground)]"
               >
-                I am a skilled full-stack developer and programmer, specializing in creating robust web applications with modern technologies like <span className="text-[var(--foreground)] font-semibold">React.js, Next.js, Node.js, and React Native.</span>
+                I am a skilled full-stack developer and programmer, specializing in creating robust web applications with modern technologies like <span className="text-[var(--foreground)] font-semibold">React.js, <Link href="/blog/building-scalable-web-applications-nextjs-react" className="font-semibold hover:underline" style={{ color: "var(--primary)" }}>Next.js</Link>, <Link href="/blog/build-rest-api-nodejs-express-tutorial" className="font-semibold hover:underline" style={{ color: "var(--primary)" }}>Node.js</Link>, and <Link href="/blog/why-every-business-needs-mobile-app-2024" className="font-semibold hover:underline" style={{ color: "var(--primary)" }}>React Native</Link>.</span>
               </p>
               <p
                 className="text-sm md:text-base
@@ -297,7 +298,7 @@ export default function Home() {
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4" style={{ color: "var(--foreground)" }}>
               My Technical <span className="text-gradient text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Skills</span>
             </h3>
-            <p className="text-md text-[var(--muted-foreground)]">Technologies and tools I use to bring exceptional digital experiences to life</p>
+            <p className="text-md text-[var(--muted-foreground)]">Technologies and tools I use to bring exceptional digital experiences to life. Learn more about <Link href="/blog/react-hooks-tutorial-usestate-useeffect-beginners-guide" className="font-semibold hover:underline" style={{ color: "var(--primary)" }}>React Hooks</Link> and <Link href="/blog/best-practices-database-design-optimization" className="font-semibold hover:underline" style={{ color: "var(--primary)" }}>database design best practices</Link>.</p>
           </div>
 
           {/* Professional Journey Stats */}
@@ -552,7 +553,79 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 7: Contact */}
+      {/* Section 7: Blog Highlights */}
+      <section className="section bg-[var(--surface)]">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="badge badge--primary text-sm font-semibold mb-2 uppercase tracking-wider text-[var(--primary-foreground)]">Latest Articles</p>
+            <h3 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: "var(--foreground)" }}>
+              From My <span className="text-gradient text-3xl md:text-4xl font-bold mb-4">Blog</span>
+            </h3>
+            <p className="text-md text-[var(--muted-foreground)]">
+              Insights, tutorials, and best practices from real-world development experience
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {adsenseBlogPosts.slice(0, 3).map((post) => (
+              <article 
+                key={post.id}
+                className="rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                style={{ backgroundColor: "var(--background)", border: "1px solid var(--border)" }}
+              >
+                <div className="p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <BookOpen className="w-4 h-4" style={{ color: "var(--primary)" }} />
+                    <span className="text-sm font-semibold" style={{ color: "var(--primary)" }}>
+                      {post.category}
+                    </span>
+                  </div>
+
+                  <h4 className="text-xl font-bold mb-3 line-clamp-2" style={{ color: "var(--foreground)" }}>
+                    {post.title}
+                  </h4>
+
+                  <p className="mb-4 line-clamp-3" style={{ color: "var(--muted-foreground)" }}>
+                    {post.excerpt}
+                  </p>
+
+                  <div className="flex items-center gap-4 mb-4 text-sm" style={{ color: "var(--muted-foreground)" }}>
+                    <div className="flex items-center gap-1">
+                      <Calendar className="w-4 h-4" />
+                      <span>{new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Clock className="w-4 h-4" />
+                      <span>{post.readTime}</span>
+                    </div>
+                  </div>
+
+                  <Link 
+                    href={`/blog/${post.slug}`}
+                    className="inline-flex items-center gap-2 text-sm font-semibold transition-all duration-300 hover:gap-3"
+                    style={{ color: "var(--primary)" }}
+                  >
+                    <span>Read Article</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link 
+              href="/blog"
+              className="btn-primary inline-flex items-center justify-center gap-2 px-6 py-3"
+            >
+              <BookOpen className="w-5 h-5" />
+              <span>View All Articles</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 8: Contact */}
       <section className="section bg-[var(--background)]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -568,7 +641,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 8: FAQ */}
+      {/* Section 9: FAQ */}
       <section className="section bg-[var(--surface)]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">

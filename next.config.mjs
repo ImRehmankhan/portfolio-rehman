@@ -89,8 +89,22 @@ const nextConfig = {
         destination: '/',
         permanent: true,
       },
+      {
+        source: '/index',
+        destination: '/',
+        permanent: true,
+      },
+      // Redirect .html versions to clean URLs
+      {
+        source: '/:path*.html',
+        destination: '/:path*',
+        permanent: true,
+      },
     ];
   },
+  
+  // Ensure trailing slashes are handled consistently
+  trailingSlash: false,
 };
 
 export default nextConfig;

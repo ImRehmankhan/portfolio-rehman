@@ -60,7 +60,9 @@ export default function Services() {
       id: "frontend",
       title: "Frontend Development",
       Icon: Monitor,
-      description: "Modern, responsive, and interactive user interfaces that engage users and drive conversions. Specializing in React.js and Next.js with focus on performance, accessibility, and SEO. Create pixel-perfect designs that work flawlessly across all devices.",
+      description: "Modern, responsive, and interactive user interfaces that engage users and drive conversions. Specializing in React.js and Next.js with focus on performance, accessibility, and SEO. I use Tailwind CSS to build beautiful UIs 5x faster - check out my productivity tips. Create pixel-perfect designs that work flawlessly across all devices.",
+      blogLink: "/blog/tailwind-css-productivity-tips-tricks-2026",
+      blogText: "Learn my Tailwind CSS productivity secrets",
       features: [
         "React.js & Next.js applications",
         "Responsive web design",
@@ -328,6 +330,19 @@ export default function Services() {
                     <p className="mb-4" style={{ color: "var(--muted-foreground)" }}>
                       {service.description}
                     </p>
+                    {service.blogLink && (
+                      <div className="mb-4 p-3 rounded-lg" style={{ backgroundColor: "var(--background)", border: "1px solid var(--primary)" }}>
+                        <Link 
+                          href={service.blogLink}
+                          className="flex items-center gap-2 text-sm font-semibold hover:underline"
+                          style={{ color: "var(--primary)" }}
+                        >
+                          <Monitor className="w-4 h-4" />
+                          <span>{service.blogText}</span>
+                          <ArrowRight className="w-4 h-4" />
+                        </Link>
+                      </div>
+                    )}
                     <div className="mb-4">
                       <p className="font-semibold mb-2" style={{ color: "var(--primary)" }}>
                         Pricing
