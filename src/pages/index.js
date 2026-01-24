@@ -92,6 +92,10 @@ export default function Home() {
                 <Link href="/portfolio" className="font-semibold hover:underline" style={{ color: "var(--primary)" }}>
                   portfolio
                 </Link>
+                , check out my free{" "}
+                <Link href="/tools" className="font-semibold hover:underline" style={{ color: "var(--primary)" }}>
+                  tools
+                </Link>
                 , or read my{" "}
                 <Link href="/blog" className="font-semibold hover:underline" style={{ color: "var(--primary)" }}>
                   blog

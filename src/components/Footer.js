@@ -10,6 +10,7 @@ export default function Footer() {
       { name: "About", path: "/about" },
       { name: "Services", path: "/services" },
       { name: "Portfolio", path: "/portfolio" },
+      { name: "Tools", path: "/tools" },
       { name: "Contact", path: "/contact" },
       { name: "Blog", path: "/blog" },
       { name: "Privacy Policy", path: "/privacy-policy" },

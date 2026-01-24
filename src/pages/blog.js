@@ -65,7 +65,7 @@ export default function Blog() {
               Development Insights & Tutorials
             </h1>
             <p className="text-lg max-w-3xl mx-auto" style={{ color: "var(--muted-foreground)" }}>
-              Expert articles on web development, React, Next.js, mobile apps, and modern programming. Learn from real-world experience and best practices. Interested in working together? View my <Link href="/services" className="font-semibold hover:underline" style={{ color: "var(--primary)" }}>services</Link>, check out my <Link href="/portfolio" className="font-semibold hover:underline" style={{ color: "var(--primary)" }}>portfolio</Link>, or read <Link href="/about" className="font-semibold hover:underline" style={{ color: "var(--primary)" }}>about my experience</Link>.
+              Expert articles on web development, React, Next.js, mobile apps, and modern programming. Learn from real-world experience and best practices. Interested in working together? View my <Link href="/services" className="font-semibold hover:underline" style={{ color: "var(--primary)" }}>services</Link>, check out my <Link href="/portfolio" className="font-semibold hover:underline" style={{ color: "var(--primary)" }}>portfolio</Link>, try my free <Link href="/tools" className="font-semibold hover:underline" style={{ color: "var(--primary)" }}>developer tools</Link>, or read <Link href="/about" className="font-semibold hover:underline" style={{ color: "var(--primary)" }}>about my experience</Link>.
             </p>
           </header>
 

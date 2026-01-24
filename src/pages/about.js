@@ -82,7 +82,11 @@ export default function About() {
                   .
                 </p>
                 <p className="text-base leading-relaxed" style={{ color: "var(--muted-foreground)" }}>
-                  My approach combines technical expertise with strong problem-solving skills. I believe in writing clean, maintainable code and following industry best practices. Whether it's optimizing performance, implementing responsive designs with <Link href="/blog/tailwind-css-productivity-tips-tricks-2026" className="font-semibold hover:underline" style={{ color: "var(--primary)" }}>modern CSS frameworks like Tailwind</Link>, or integrating complex APIs, I'm committed to delivering excellence in every project. Learn more about what I can do for you on my{" "}
+                  My approach combines technical expertise with strong problem-solving skills. I believe in writing clean, maintainable code and following industry best practices. Whether it's optimizing performance, implementing responsive designs with <Link href="/blog/tailwind-css-productivity-tips-tricks-2026" className="font-semibold hover:underline" style={{ color: "var(--primary)" }}>modern CSS frameworks like Tailwind</Link>, or integrating complex APIs, I'm committed to delivering excellence in every project. Check out my free{" "}
+                  <Link href="/tools" className="font-semibold hover:underline" style={{ color: "var(--primary)" }}>
+                    developer tools
+                  </Link>
+                  {" "}or learn more about what I can do for you on my{" "}
                   <Link href="/services" className="font-semibold hover:underline" style={{ color: "var(--primary)" }}>
                     services page
                   </Link>

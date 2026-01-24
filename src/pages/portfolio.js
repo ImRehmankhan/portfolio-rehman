@@ -94,7 +94,7 @@ export default function Portfolio() {
               My Recent Work
             </h1>
             <p className="text-lg max-w-3xl mx-auto" style={{ color: "var(--muted-foreground)" }}>
-              Explore a selection of projects I've built for clients and personal development. Each project showcases my expertise in modern web and mobile technologies, problem-solving skills, and commitment to quality. Want to learn more? Check out my <Link href="/services" className="font-semibold hover:underline" style={{ color: "var(--primary)" }}>services</Link>, read <Link href="/about" className="font-semibold hover:underline" style={{ color: "var(--primary)" }}>about me</Link>, or explore my <Link href="/blog" className="font-semibold hover:underline" style={{ color: "var(--primary)" }}>blog articles</Link>.
+              Explore a selection of projects I've built for clients and personal development. Each project showcases my expertise in modern web and mobile technologies, problem-solving skills, and commitment to quality. Want to learn more? Check out my <Link href="/services" className="font-semibold hover:underline" style={{ color: "var(--primary)" }}>services</Link>, try my free <Link href="/tools" className="font-semibold hover:underline" style={{ color: "var(--primary)" }}>developer tools</Link>, read <Link href="/about" className="font-semibold hover:underline" style={{ color: "var(--primary)" }}>about me</Link>, or explore my <Link href="/blog" className="font-semibold hover:underline" style={{ color: "var(--primary)" }}>blog articles</Link>.
             </p>
           </header>
 
