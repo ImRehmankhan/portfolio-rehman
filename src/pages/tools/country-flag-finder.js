@@ -2,7 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useMemo } from "react";
-import { Search, Globe, Filter, Download, Copy, Check, X, ArrowLeft, Info } from "lucide-react";
+import { Search, Globe, Filter, Download, Copy, Check, X, ArrowLeft, Info, Code2 } from "lucide-react";
 
 export default function CountryFlagFinder() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -10,6 +10,7 @@ export default function CountryFlagFinder() {
   const [copiedCode, setCopiedCode] = useState("");
   const [showInfo, setShowInfo] = useState(false);
   const [failedImages, setFailedImages] = useState(new Set());
+  const [showCodeModal, setShowCodeModal] = useState(null);
 
   // Comprehensive country data with flags, names, ISO codes, and regions
   const countries = [
@@ -245,6 +246,66 @@ export default function CountryFlagFinder() {
   // Handle image load error
   const handleImageError = (countryCode) => {
     setFailedImages(prev => new Set([...prev, countryCode]));
+  };
+
+  // Download flag image
+  const downloadFlag = async (country) => {
+    try {
+      const imageUrl = `https://flagcdn.com/w320/${country.code.toLowerCase()}.png`;
+      const response = await fetch(imageUrl);
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `${country.name.toLowerCase().replace(/\s+/g, '-')}-flag.png`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error('Download failed:', error);
+    }
+  };
+
+  // Get code snippets for different frameworks
+  const getCodeSnippets = (country) => {
+    const flagUrl = `https://flagcdn.com/w160/${country.code.toLowerCase()}.png`;
+    return {
+      html: `<!-- ${country.name} Flag -->
+<img src="${flagUrl}" 
+     alt="${country.name} flag" 
+     width="160" 
+     height="107" />`,
+      
+      react: `// ${country.name} Flag
+<Image 
+  src="${flagUrl}"
+  alt="${country.name} flag"
+  width={160}
+  height={107}
+/>`,
+      
+      nextjs: `// ${country.name} Flag (Next.js)
+import Image from 'next/image';
+
+<Image 
+  src="${flagUrl}"
+  alt="${country.name} flag"
+  width={160}
+  height={107}
+  unoptimized
+/>`,
+      
+      emoji: `<!-- ${country.name} Flag Emoji -->
+${country.flag}`,
+
+      css: `/* ${country.name} Flag Background */
+background-image: url('${flagUrl}');
+background-size: cover;
+background-position: center;`,
+
+      markdown: `![${country.name} Flag](${flagUrl})`
+    };
   };
 
   return (
@@ -512,7 +573,7 @@ export default function CountryFlagFinder() {
                       <span>{country.region}</span>
                     </div>
 
-                    <div className="flex flex-wrap gap-1">
+                    <div className="flex flex-wrap gap-1 mb-3">
                       {country.colors.slice(0, 4).map((color, idx) => (
                         <span 
                           key={idx}
@@ -526,11 +587,123 @@ export default function CountryFlagFinder() {
                         </span>
                       ))}
                     </div>
+
+                    {/* Action Buttons */}
+                    <div className="flex gap-2 mt-3 pt-3 border-t" style={{ borderColor: 'var(--border)' }}>
+                      <button
+                        onClick={() => downloadFlag(country)}
+                        className="flex-1 flex items-center justify-center gap-1 px-3 py-2 rounded-lg text-xs font-medium transition-all hover:scale-105"
+                        style={{
+                          backgroundColor: 'var(--background)',
+                          color: 'var(--foreground)',
+                          border: '1px solid var(--border)'
+                        }}
+                        title="Download flag image"
+                      >
+                        <Download className="w-3 h-3" />
+                        Download
+                      </button>
+                      <button
+                        onClick={() => setShowCodeModal(country)}
+                        className="flex-1 flex items-center justify-center gap-1 px-3 py-2 rounded-lg text-xs font-medium transition-all hover:scale-105"
+                        style={{
+                          backgroundColor: 'var(--primary)',
+                          color: 'var(--primary-foreground)'
+                        }}
+                        title="Get code snippet"
+                      >
+                        <Code2 className="w-3 h-3" />
+                        Get Code
+                      </button>
+                    </div>
                   </div>
                 ))}
               </div>
             )}
           </section>
+
+          {/* Code Modal */}
+          {showCodeModal && (
+            <div 
+              className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50"
+              onClick={() => setShowCodeModal(null)}
+            >
+              <div 
+                className="rounded-xl max-w-2xl w-full max-h-[80vh] overflow-y-auto"
+                style={{ backgroundColor: 'var(--surface)' }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="sticky top-0 p-6 border-b flex items-center justify-between"
+                  style={{ backgroundColor: 'var(--surface)', borderColor: 'var(--border)' }}>
+                  <div>
+                    <h3 className="text-xl font-bold" style={{ color: 'var(--foreground)' }}>
+                      {showCodeModal.name} Flag Code
+                    </h3>
+                    <p className="text-sm" style={{ color: 'var(--muted-foreground)' }}>
+                      Copy code to use in your project
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => setShowCodeModal(null)}
+                    className="p-2 rounded-lg transition-colors hover:bg-[var(--background)]"
+                    style={{ color: 'var(--muted-foreground)' }}
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
+
+                <div className="p-6 space-y-4">
+                  {Object.entries(getCodeSnippets(showCodeModal)).map(([lang, code]) => (
+                    <div key={lang} className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <h4 className="text-sm font-semibold uppercase" style={{ color: 'var(--foreground)' }}>
+                          {lang === 'html' ? 'HTML' : 
+                           lang === 'react' ? 'React' : 
+                           lang === 'nextjs' ? 'Next.js' : 
+                           lang === 'emoji' ? 'Emoji' :
+                           lang === 'css' ? 'CSS' :
+                           lang === 'markdown' ? 'Markdown' : lang}
+                        </h4>
+                        <button
+                          onClick={() => {
+                            navigator.clipboard.writeText(code);
+                            setCopiedCode(lang);
+                            setTimeout(() => setCopiedCode(""), 2000);
+                          }}
+                          className="flex items-center gap-1 px-3 py-1 rounded text-xs font-medium transition-all"
+                          style={{
+                            backgroundColor: copiedCode === lang ? 'var(--primary)' : 'var(--background)',
+                            color: copiedCode === lang ? 'var(--primary-foreground)' : 'var(--foreground)'
+                          }}
+                        >
+                          {copiedCode === lang ? (
+                            <>
+                              <Check className="w-3 h-3" />
+                              Copied!
+                            </>
+                          ) : (
+                            <>
+                              <Copy className="w-3 h-3" />
+                              Copy
+                            </>
+                          )}
+                        </button>
+                      </div>
+                      <pre 
+                        className="p-4 rounded-lg overflow-x-auto text-xs"
+                        style={{ 
+                          backgroundColor: 'var(--background)',
+                          color: 'var(--foreground)'
+                        }}
+                      >
+                        <code>{code}</code>
+                      </pre>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* SEO Content Section */}
           <section className="mt-16 space-y-12">
