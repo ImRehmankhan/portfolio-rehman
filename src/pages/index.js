@@ -242,7 +242,7 @@ export default function Home() {
               <div key={project.id} className="flex flex-col justify-between rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl" style={{ backgroundColor: "var(--surface)", border: "1px solid var(--border)" }}>
                 <div>
                   <div className="relative h-70 md:h-80 sm:h-50 w-full overflow-hidden" style={{ backgroundColor: "var(--input)" }}>
-                    <Image src={project.images[project.images.length - 1]} alt={project.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover object-top" loading="lazy" />
+                    <Image src={project.images[0]} alt={project.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover object-top" loading="lazy" />
                   </div>
                   <div className="p-4 sm:p-6">
                     <p className="text-xs sm:text-sm mb-2 font-semibold" style={{ color: "var(--primary)" }}>

@@ -16,6 +16,10 @@ export default function Portfolio() {
         return GraduationCap;
       case "Blog Website":
         return Monitor;
+      case "Mobile Application":
+        return Smartphone;
+      case "Business Management Platform":
+        return Database;
       default:
         return Code;
     }
@@ -34,7 +38,7 @@ export default function Portfolio() {
     technologies: project.technologies,
     challenges: project.challenges ? project.challenges[0] : "Creating a scalable and performant solution.",
     results: project.results ? Object.values(project.results)[0] : "Successfully delivered a high-quality product.",
-    img: project.images[project.images.length - 1], // Use last image as thumbnail
+    img: project.images[0], // Use last image as thumbnail
     demoUrl: project.liveLink,
     codeUrl: project.githubLink,
     year: new Date().getFullYear().toString()

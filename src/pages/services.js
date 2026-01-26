@@ -35,6 +35,8 @@ export default function Services() {
       title: "Mobile App Development",
       Icon: Smartphone,
       description: "Professional cross-platform mobile app development using React Native. Build high-performance mobile applications for both iOS and Android with a single codebase. Native-like user experience with seamless performance and modern UI designs.",
+      portfolioLink: "/portfolio/kairot-mobile-trading-platform",
+      portfolioText: "See my Kairot mobile trading app project",
       features: [
         "Cross-platform app development (iOS & Android)",
         "Native module integration",
@@ -339,6 +341,19 @@ export default function Services() {
                         >
                           <Monitor className="w-4 h-4" />
                           <span>{service.blogText}</span>
+                          <ArrowRight className="w-4 h-4" />
+                        </Link>
+                      </div>
+                    )}
+                    {service.portfolioLink && (
+                      <div className="mb-4 p-3 rounded-lg" style={{ backgroundColor: "var(--background)", border: "1px solid var(--primary)" }}>
+                        <Link 
+                          href={service.portfolioLink}
+                          className="flex items-center gap-2 text-sm font-semibold hover:underline"
+                          style={{ color: "var(--primary)" }}
+                        >
+                          <Code className="w-4 h-4" />
+                          <span>{service.portfolioText}</span>
                           <ArrowRight className="w-4 h-4" />
                         </Link>
                       </div>

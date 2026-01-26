@@ -16,6 +16,7 @@ Built with a sophisticated multi-tenant architecture, Exposaas allows multiple c
 The platform includes advanced features like background job processing for resource-intensive operations (PDF generation, bulk notifications), Redis caching for optimal performance, and Azure Blob Storage integration for secure document management. The system was designed from day one to scale, handling thousands of vehicles across multiple companies without performance degradation.`,
   
   images: [
+    "https://res.cloudinary.com/dzc11dpii/image/upload/v1766892972/Minimalist_Neutral_Multi_Device_Computer_Mockup_Website_Launch_Instagram_Post_1_epinif.jpg",
   "https://res.cloudinary.com/dzc11dpii/image/upload/v1766893992/screencapture-localhost-3000-2025-12-27-18_16_32_tlekmq.png",
   "https://res.cloudinary.com/dzc11dpii/image/upload/v1766893992/screencapture-localhost-3000-dashboard-2025-12-27-18_18_52_ziacx1.png",
   "https://res.cloudinary.com/dzc11dpii/image/upload/v1766893992/ss_fl0bd3.png",
@@ -26,7 +27,7 @@ The platform includes advanced features like background job processing for resou
   "https://res.cloudinary.com/dzc11dpii/image/upload/v1766896886/Screenshot_2025-12-27_182942_xbpfxx.png",
   "https://res.cloudinary.com/dzc11dpii/image/upload/v1766896887/screencapture-localhost-3000-InvoiceJobs-2025-12-27-18_31_08_a7n72w.png",
 
-    "https://res.cloudinary.com/dzc11dpii/image/upload/v1766892972/Minimalist_Neutral_Multi_Device_Computer_Mockup_Website_Launch_Instagram_Post_1_epinif.jpg",
+    
    
   ],
   
@@ -473,6 +474,152 @@ Built with modern web technologies, the blog loads quickly and provides smooth n
     teamSize: "Solo Project",
     
     tags: ["Next.js", "Blog", "Technical Content", "SEO", "Responsive Design"]
+  },
+
+  {
+    id: 7,
+    slug: "kairot-mobile-trading-platform",
+    title: "Kairot - Mobile Trading & Investment Platform",
+    category: "Mobile Application",
+    shortDescription: "A comprehensive cross-platform mobile trading application built with React Native that enables users to trade currency pairs, manage investment portfolios, and earn through referrals with secure KYC verification.",
+    
+    fullDescription: `Kairot is a comprehensive cross-platform mobile application built with React Native that enables users to trade currency pairs (USD/CHF, EUR/USD, etc.), manage their investment portfolio, and earn through referrals. The app provides a complete financial ecosystem with features for deposits, withdrawals, trading, and KYC verification.
+
+The application offers a complete financial ecosystem with real-time currency pair trading, investment calculators, and potential earnings displays. Users can securely deposit and withdraw funds with multiple preset amounts ranging from CFA 50,000 to 1,000,000.
+
+Built with modern React Native architecture, Kairot features a modular navigation system with separated stack navigators for each feature module (HomeStack, TradeStack, PairsStack, HistoryStack, ReferralStack). The app implements a sophisticated multi-step KYC verification process with document upload capabilities and personal information collection.
+
+The platform includes comprehensive transaction history tracking for all trades, deposits, and withdrawals with clear status indicators. A built-in referral system allows users to share codes and build teams while earning rewards. The responsive design ensures consistent styling across all screens with custom UI components and smooth animations powered by React Native Reanimated.`,
+    
+    images: [
+      "https://res.cloudinary.com/dzc11dpii/image/upload/v1769326022/Minimalist_Neutral_Multi_Device_Computer_Mockup_Website_Launch_Instagram_Post_dptjop.png",
+      "https://res.cloudinary.com/dzc11dpii/image/upload/v1769326022/Minimalist_Neutral_Multi_Device_Computer_Mockup_Website_Launch_Instagram_Post_4_p8sruf.png",
+      
+      "https://res.cloudinary.com/dzc11dpii/image/upload/v1769326044/2_nlkwmz.png",
+    ],
+    
+    technologies: [
+      "React Native 0.80.1",
+      "React 19.1.0",
+      "TypeScript 5.0.4",
+      "React Navigation 7.x",
+      "React Native Paper",
+      "NativeWind 4.x",
+      "React Native Gesture Handler",
+      "React Native Reanimated",
+      "React Native Step Indicator",
+      "React Native Vector Icons"
+    ],
+    
+    features: [
+      "Real-time currency pair trading with investment calculator and potential earnings display",
+      "Secure deposit and withdrawal functionality with multiple preset amounts (CFA 50,000 - 1,000,000)",
+      "Built-in referral system with code sharing and team tracking",
+      "Comprehensive transaction history tracking for trades, deposits, and withdrawals with status indicators",
+      "Multi-step KYC verification process with document upload and personal information collection",
+      "Complete user authentication flow with login, signup, and password reset functionality",
+      "Personalized dashboard with balance tracking, profit/loss indicators, and team management",
+      "Support for multiple trading pairs (USD/CHF, EUR/USD, GBP/USD, AUD/USD, etc.)",
+      "Responsive typography and consistent styling across all 25+ screens",
+      "Custom UI with Material Design components via React Native Paper",
+      "Smooth animations and gesture handling for enhanced user experience",
+      "Modular navigation architecture with separate stack navigators",
+      "Cross-platform support for both iOS and Android",
+      "Scheduled trade configuration and management",
+      "Currency pairs listing with search functionality",
+      "Payment confirmation and success screens",
+      "5-step KYC progress tracking system",
+      "Profile management and settings",
+      "Balance overview and portfolio tracking",
+      "Custom counter component for investment amount selection",
+      "Intuitive bottom tab navigation with custom styling"
+    ],
+    
+    challenges: [
+      "Implementing complex multi-step KYC flow with progress tracking across multiple screens",
+      "Creating responsive layouts that work seamlessly across different device sizes and orientations",
+      "Integrating multiple icon libraries (Ionicons, FontAwesome, MaterialIcons) for consistent UI",
+      "Building custom counter component for investment amount selection with smooth animations",
+      "Designing intuitive bottom tab navigation with custom styling that follows Material Design guidelines",
+      "Managing navigation state across 25+ screens with proper stack organization",
+      "Ensuring consistent styling and typography across the entire application",
+      "Implementing real-time trading calculator with accurate earnings projections",
+      "Handling document uploads for KYC verification with proper validation",
+      "Creating smooth transitions and animations without impacting performance"
+    ],
+    
+    solutions: [
+      "Developed modular navigation architecture with separated stack navigators (HomeStack, TradeStack, PairsStack, HistoryStack, ReferralStack) for better organization",
+      "Implemented centralized shared styles system ensuring consistency across all components",
+      "Used React Native Step Indicator for visual KYC progress tracking with custom styling",
+      "Integrated React Native Size Matters and Responsive FontSize for device-agnostic responsive design",
+      "Created reusable component-based architecture with screen-based organization",
+      "Utilized NativeWind (Tailwind CSS for React Native) for rapid UI development",
+      "Implemented React Native Gesture Handler and Reanimated for smooth, hardware-accelerated animations",
+      "Built custom counter component with increment/decrement controls and preset amount selection",
+      "Used React Native Paper for consistent Material Design components",
+      "Implemented proper safe area handling with React Native Safe Area Context",
+      "Created comprehensive TypeScript types for type safety and better developer experience",
+      "Optimized Metro bundler configuration for faster build times"
+    ],
+    
+    results: {
+      screens: "Successfully implemented 25+ screens with consistent design",
+      crossPlatform: "Single codebase supporting both iOS (Swift) and Android (Gradle)",
+      userExperience: "Smooth animations and responsive design across all device sizes",
+      codeQuality: "Well-organized modular architecture with reusable components",
+      performance: "Hardware-accelerated animations providing 60fps user experience"
+    },
+    
+    liveLink: "https://drive.google.com/drive/folders/1GxQ_U169HGhyUH-l9Kz-qLlA1lYwd-Jg?usp=sharing", // Mobile app - no web version
+    githubLink: "https://github.com/ImRehmankhan/Kairot.git", // Replace with actual link
+    
+    clientType: "Fintech Startup",
+    duration: "3 months",
+    myRole: "Full-Stack Mobile Developer",
+    teamSize: "Solo Development",
+    
+    technicalHighlights: [
+      "React Native 0.80.1 with latest React 19.1.0",
+      "TypeScript 5.0.4 for type-safe development",
+      "React Navigation 7.x with custom stack navigators",
+      "NativeWind 4.x for Tailwind CSS styling",
+      "Multi-step KYC flow with document upload",
+      "Real-time trading calculator",
+      "Modular navigation architecture",
+      "Cross-platform iOS and Android support",
+      "Custom UI components and shared styles",
+      "Smooth animations with Reanimated"
+    ],
+    
+    keyLearnings: [
+      "Modular navigation architecture is essential for large React Native applications",
+      "TypeScript significantly improves code quality and reduces runtime errors",
+      "Shared styles system ensures consistent design across the entire app",
+      "React Native Paper provides excellent Material Design components out of the box",
+      "NativeWind makes styling in React Native much faster and more maintainable",
+      "Proper state management is crucial for complex multi-step flows like KYC",
+      "Cross-platform development requires careful testing on both iOS and Android",
+      "Performance optimization is critical for smooth animations and user experience"
+    ],
+    
+    tags: [
+      "React Native",
+      "TypeScript",
+      "Mobile App",
+      "Cross-Platform",
+      "Trading Platform",
+      "Fintech",
+      "React Navigation",
+      "NativeWind",
+      "React Native Paper",
+      "KYC Verification",
+      "Payment Processing",
+      "Material Design",
+      "iOS",
+      "Android",
+      "Investment App"
+    ]
   }
 ];
 

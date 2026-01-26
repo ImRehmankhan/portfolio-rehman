@@ -485,7 +485,7 @@ export const adsenseBlogPosts = [
 
       <p>Why React Native? It saves money. Instead of building two separate apps (one for iPhone, one for Android), we build one app that works on both platforms.</p>
 
-      <p>This cuts development time in half and reduces costs by 40-60%.</p>
+      <p>This cuts development time in half and reduces costs by 40-60%. For example, I recently built <a href="/portfolio/kairot-mobile-trading-platform" style="color: var(--primary); font-weight: 600; text-decoration: underline;">Kairot, a comprehensive mobile trading and investment platform</a> with 25+ screens, complete KYC verification, real-time trading calculators, and cross-platform support using React Native - all within a 3-month timeline.</p>
 
       <h3>Testing Phase (2-3 weeks)</h3>
       <p>We test on real devices, not just emulators. I typically test on:</p>
@@ -645,7 +645,7 @@ export const adsenseBlogPosts = [
       <h2>Questions Business Owners Ask Me</h2>
 
       <h3>Should I build for iPhone or Android first?</h3>
-      <p>Build for both simultaneously using React Native. It costs only 20-30% more than building for one platform, and you reach 100% of smartphone users instead of just 50%.</p>
+      <p>Build for both simultaneously using React Native. It costs only 20-30% more than building for one platform, and you reach 100% of smartphone users instead of just 50%. Check out my <a href="/portfolio/kairot-mobile-trading-platform" style="color: var(--primary); font-weight: 600; text-decoration: underline;">Kairot trading app portfolio project</a> to see a real example of a cross-platform React Native app with complex features like payment processing, KYC verification, and real-time trading.</p>
 
       <h3>How long does app development take?</h3>
       <p>Simple apps: 2-3 months. Mid-level apps: 3-5 months. Complex apps: 6-12 months. Anyone promising faster is cutting corners.</p>
