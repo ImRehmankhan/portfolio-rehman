@@ -620,6 +620,216 @@ The platform includes comprehensive transaction history tracking for all trades,
       "Android",
       "Investment App"
     ]
+  },
+
+  {
+    id: 6,
+    slug: "fleethub-enterprise-fleet-management",
+    title: "FleetHub | Enterprise Fleet & Visa Management Platform",
+    category: "Full-Stack Web Application",
+    shortDescription: "FleetHub is a comprehensive enterprise-level web application designed to streamline fleet management operations, visa processing, financial tracking, and compliance management for transportation companies. Built with modern technologies, it handles complex business workflows involving vehicles, drivers, customers, corporate contracts, and multi-entity financial transactions.",
+    
+    fullDescription: `FleetHub is a comprehensive enterprise-level web application that transforms how fleet management companies in the UAE transportation sector operate. The platform eliminates operational fragmentation by consolidating 5+ disconnected systems into a single, powerful application.
+
+The system addresses critical business challenges including multi-national visa processing, complex vehicle ownership models (owned, financed, rented), multi-partner vehicle ownership with percentage allocation, and sophisticated financial tracking across multiple entities. Every aspect of fleet operations is managed through an intuitive interface with real-time visibility.
+
+Built with a robust database schema featuring 27 interconnected tables, FleetHub handles the complete lifecycle of vehicles - from purchase through operation to sale - while maintaining comprehensive audit trails for compliance. The platform supports multiple ownership models, tracks insurance and registration, manages driver assignments, and documents traffic accidents with complete historical preservation.
+
+The financial system is particularly sophisticated, supporting invoice generation for 6 different entity types (customers, companies, drivers, vehicles, suppliers, applications) with automated tax calculations, discount management, installment tracking, and multi-currency precision. The double-entry accounting system ensures financial accuracy with automated reconciliation.
+
+FleetHub's visa and application processing module streamlines the entire workflow from request submission through completion, handling labor transfers, document uploads, and payment tracking. The contract management system enables corporate fleet arrangements with custom pricing per vehicle and automated invoice generation.
+
+Designed for scalability and built with enterprise-grade security including role-based access control, comprehensive audit logging, and session management, FleetHub delivers measurable business impact: 70% reduction in data entry time, 99% faster decision making, and 15% improvement in data accuracy.`,
+    
+    images: [
+      "https://res.cloudinary.com/dzc11dpii/image/upload/v1769847863/Minimalist_Neutral_Multi_Device_Computer_Mockup_Website_Launch_Instagram_Post_5_eanpuk.png",
+      "https://res.cloudinary.com/dzc11dpii/image/upload/v1770011650/f2_zkhrzc.png",
+      "https://res.cloudinary.com/dzc11dpii/image/upload/v1770011649/f3_u91j4r.png",
+      "https://res.cloudinary.com/dzc11dpii/image/upload/v1770011649/f4_zzzpog.png",
+      "https://res.cloudinary.com/dzc11dpii/image/upload/v1770011650/f5_yzf2ld.png",
+      "https://res.cloudinary.com/dzc11dpii/image/upload/v1770011650/f6_utrg2o.png",
+      "https://res.cloudinary.com/dzc11dpii/image/upload/v1770011650/f7_sw94zc.png",
+      "https://res.cloudinary.com/dzc11dpii/image/upload/v1770011651/f8_iezmhj.png",
+      "https://res.cloudinary.com/dzc11dpii/image/upload/v1770011651/f9_vm5iib.png",
+      "https://res.cloudinary.com/dzc11dpii/image/upload/v1770011655/f10_rwwor1.png",
+      "https://res.cloudinary.com/dzc11dpii/image/upload/v1770011655/f11_in4ys3.png",
+      "https://res.cloudinary.com/dzc11dpii/image/upload/v1770011656/f12_sos7pj.png",
+      "https://res.cloudinary.com/dzc11dpii/image/upload/v1770011656/f13_vvbrvp.png",
+      "https://res.cloudinary.com/dzc11dpii/image/upload/v1770011658/f14_rrffr3.png",
+      "https://res.cloudinary.com/dzc11dpii/image/upload/v1770011658/f15_shyaba.png",
+      "https://res.cloudinary.com/dzc11dpii/image/upload/v1770011660/f16_gxthd1.png",
+      "https://res.cloudinary.com/dzc11dpii/image/upload/v1770011660/f17_ggvcts.png",
+      "https://res.cloudinary.com/dzc11dpii/image/upload/v1770011661/f18_kscqxy.png",
+      "https://res.cloudinary.com/dzc11dpii/image/upload/v1770011662/f19_ih1l9w.png",
+      "https://res.cloudinary.com/dzc11dpii/image/upload/v1770011662/f20_vyjl1y.png",
+      "https://res.cloudinary.com/dzc11dpii/image/upload/v1770011664/f21_ohau0b.png",
+      "https://res.cloudinary.com/dzc11dpii/image/upload/v1770011665/f22_goiqb5.png",
+      "https://res.cloudinary.com/dzc11dpii/image/upload/v1770011666/f23_rarxgy.png",
+      "https://res.cloudinary.com/dzc11dpii/image/upload/v1770011666/f24_aoshrt.png",
+      "https://res.cloudinary.com/dzc11dpii/image/upload/v1770011667/f25_qgkezh.png",
+      "https://res.cloudinary.com/dzc11dpii/image/upload/v1770011669/f26_olsxsd.png",
+      "https://res.cloudinary.com/dzc11dpii/image/upload/v1770011670/f27_dxvod5.png",
+      "https://res.cloudinary.com/dzc11dpii/image/upload/v1770011671/f29_zqwcod.png",
+      "https://res.cloudinary.com/dzc11dpii/image/upload/v1770011672/f30_gcbupc.png",
+      
+    ],
+    
+    technologies: [
+      "Next.js 15",
+      "React 19",
+      "PostgreSQL",
+      "Prisma ORM",
+      "NextAuth.js",
+      "Azure Blob Storage",
+      "TailwindCSS 4.0",
+      "Chart.js",
+      "Docker",
+      "Docker Compose"
+    ],
+    
+    features: [
+      "Unified data management consolidating customers, vehicles, drivers, documents, and financial records",
+      "Multi-entity invoice system supporting 6 different entity types with automated calculations",
+      "Comprehensive vehicle fleet management with multiple ownership models (owned, financed, rented)",
+      "Multi-partner vehicle ownership with percentage allocation and visa company associations",
+      "Advanced financial system with double-entry accounting and transaction tracking",
+      "Corporate contract management with vehicle assignment and automated billing",
+      "Complete visa and application processing workflow with labor transfer documentation",
+      "Real-time analytics dashboard with revenue trends and key business metrics",
+      "Document management with Azure Blob Storage integration and expiry alerts",
+      "Role-based access control (RBAC) with granular permissions",
+      "Comprehensive audit logging for compliance and regulatory requirements",
+      "Customer relationship management with visa status and salary tracking",
+      "Traffic accident documentation and policy violation records",
+      "Vehicle lifecycle tracking from purchase through operation to sale",
+      "Payment tracking with installment support and automated reminders",
+      "Insurance and registration renewal tracking with notification system",
+      "Driver assignment history with complete date range tracking",
+      "Multi-currency financial precision with automated tax and discount calculations",
+      "Advanced search functionality across 27 database tables",
+      "PDF invoice generation and export capabilities",
+      "Historical data preservation with soft deletes for critical business data",
+      "Vehicle reminder system for renewals and maintenance scheduling",
+      "Partner management for multi-ownership vehicle arrangements",
+      "Corporate account designation and contract-based invoicing",
+      "Flexible invoice items with custom pricing and categorization"
+    ],
+    
+    challenges: [
+      "Designing a database schema to support 6 different invoice entity types while maintaining referential integrity",
+      "Implementing flexible vehicle ownership models (owned, financed, in-house financed, rented) in a single table",
+      "Managing 40+ database migrations over 3 months while preserving production data with zero loss",
+      "Ensuring precise financial calculations across multi-currency transactions with proper decimal handling",
+      "Building performant search across 27 interconnected tables with sub-200ms response times",
+      "Handling complex multi-partner vehicle ownership with percentage allocations and visa company associations",
+      "Creating a polymorphic invoice system that prevents orphaned records and maintains data integrity",
+      "Implementing cascade deletion rules that preserve critical business data while removing dependencies",
+      "Optimizing database queries for large datasets with proper indexing strategies",
+      "Managing complex business workflows involving vehicles, drivers, customers, and corporate contracts"
+    ],
+    
+    solutions: [
+      "Implemented optional foreign keys with application-level validation ensuring exactly one entity per invoice",
+      "Designed conditional schema with discriminator field (ownedOrFinanced) dynamically showing/hiding relevant fields",
+      "Adopted incremental migration approach with backups, testing, and reversible migrations for data safety",
+      "Used PostgreSQL DECIMAL(12,2) for all financial amounts with server-side-only calculations and consistent rounding",
+      "Built intelligent search with entity-specific indexes, parallel queries, and result prioritization",
+      "Created VehiclePartner junction table supporting multiple partners per vehicle with ownership percentages",
+      "Developed validateInvoice() function enforcing business rules at the application layer",
+      "Utilized Prisma cascade rules with careful onDelete behaviors and soft deletes for critical data",
+      "Implemented Prisma include for eager loading, database indexes on foreign keys, and query result caching",
+      "Designed 27-table normalized database with referential integrity and materialized views for performance"
+    ],
+    
+    results: {
+      efficiency: "70% reduction in data entry time (from 20 hrs/week to 6 hrs/week)",
+      reporting: "Real-time report generation vs 2-3 days previously - instant access",
+      accuracy: "15% improvement in data accuracy (from 80-85% to 98-99%)",
+      consolidation: "80% reduction in systems used (from 5+ tools to 1 platform)",
+      decisionMaking: "99% faster decision making (from days to minutes)",
+      searchPerformance: "Sub-200ms search across entire 27-table database",
+      dataIntegrity: "Zero data loss across 40+ database migrations",
+      scalability: "Successfully handles complex workflows for transportation companies"
+    },
+    
+    liveLink: null, // Private enterprise application
+    githubLink: null, // Private company repository
+    
+    clientType: "UAE Transportation Company - Enterprise Client",
+    duration: "4 months (September 2025 - December 2025)",
+    myRole: "Full-Stack Developer & System Architect",
+    teamSize: "Solo Development",
+    
+    technicalHighlights: [
+      "27 interconnected database tables with complex relationships and referential integrity",
+      "Multi-entity polymorphic invoice system supporting 6 different entity types",
+      "Flexible vehicle ownership models with conditional schema and multi-partner support",
+      "Double-entry accounting system with automated financial reconciliation",
+      "Azure Blob Storage integration for secure document management",
+      "Type-safe development with Prisma ORM and automatic migrations",
+      "Advanced search with entity-specific indexes and parallel query execution",
+      "Comprehensive audit logging system for compliance and regulatory requirements",
+      "Role-based access control with granular permissions hierarchy",
+      "Real-time analytics dashboard with Chart.js visualizations",
+      "Docker containerization for consistent deployment environments",
+      "NextAuth authentication with session management and security best practices",
+      "Server-side financial calculations ensuring precision and accuracy",
+      "Incremental migration strategy with zero data loss over 40+ migrations",
+      "Materialized views and query optimization for performance at scale"
+    ],
+    
+    keyLearnings: [
+      "Database design is critical - spending 2x time on design saves 10x time on refactoring",
+      "Type safety with TypeScript and Prisma catches errors at compile time, reducing runtime errors by 60%",
+      "User feedback reveals edge cases developers never imagine - build with users, not for users",
+      "Start simple with MVP features, then iterate based on real usage patterns",
+      "Performance optimization requires N+1 query elimination, proper indexing, and strategic caching",
+      "Documentation as you build (not after) saves countless hours for future maintenance",
+      "Security must be built into the foundation - retrofitting is 10x harder",
+      "Error handling is communication - user-friendly messages turn failures into opportunities",
+      "Incremental database migrations with backups prevent catastrophic data loss",
+      "Business logic validation at application layer provides flexibility while maintaining data integrity"
+    ],
+    
+    futureEnhancements: [
+      "WhatsApp and SMS integration for automated document expiry reminders",
+      "WebSocket implementation for real-time dashboard updates and multi-user collaboration",
+      "Background worker processes for automated invoice generation and scheduled reports",
+      "React Native mobile application for field operations with offline mode",
+      "Progressive Web App (PWA) with push notifications and offline functionality",
+      "AI-powered predictive analytics for vehicle maintenance and revenue forecasting",
+      "Government API integration for automated license verification and visa status checks",
+      "Payment gateway integration for online payment acceptance and reconciliation",
+      "GPS tracking integration for real-time vehicle location and route optimization",
+      "Multi-language support with Arabic localization and RTL layout",
+      "Multi-tenancy architecture for white-label SaaS offering",
+      "Public API and webhook system for third-party integrations"
+    ],
+    
+    tags: [
+      "Next.js",
+      "React",
+      "PostgreSQL",
+      "Prisma",
+      "Enterprise",
+      "Fleet Management",
+      "Full Stack",
+      "Azure",
+      "Financial System",
+      "Visa Management",
+      "Multi-Tenant Ready",
+      "TypeScript",
+      "NextAuth",
+      "Docker",
+      "Chart.js",
+      "Invoice System",
+      "Vehicle Management",
+      "UAE Business",
+      "Transportation",
+      "Compliance",
+      "Audit Logging",
+      "RBAC"
+    ]
   }
 ];
 
