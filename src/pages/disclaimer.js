@@ -5,7 +5,7 @@ export default function Disclaimer() {
   return (
     <>
       <Head>
-        <title>Disclaimer — Softoria | Muhammad Rehman</title>
+        <title>Legal Disclaimer — Softoria | Muhammad Rehman Portfolio</title>
         <meta 
           name="description" 
           content="Disclaimer for Softoria website. Information about accuracy, warranties, and liability regarding content and services provided by Muhammad Rehman." 

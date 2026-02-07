@@ -5,7 +5,7 @@ export default function Terms() {
   return (
     <>
       <Head>
-        <title>Terms & Conditions — Softoria</title>
+        <title>Terms & Conditions — Softoria | Muhammad Rehman Services</title>
         <meta name="description" content="Terms and conditions for using Softoria website and services provided by Muhammad Rehman." />
         <link rel="canonical" href="https://www.softoria.tech/terms" />
       </Head>

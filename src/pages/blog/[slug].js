@@ -126,7 +126,7 @@ export default function BlogPost() {
   return (
     <>
       <Head>
-        <title>{post.title} | Muhammad Rehman Blog</title>
+        <title>{`${post.title} | Softoria Tech Blog`}</title>
         <meta name="description" content={post.excerpt} />
         <meta name="keywords" content={post.tags.join(", ")} />
         <meta name="author" content={post.author} />
@@ -224,6 +224,51 @@ export default function BlogPost() {
               "wordCount": post.content.split(' ').length,
               "articleBody": post.excerpt,
               "inLanguage": "en-US"
+            })
+          }}
+        />
+        
+        {/* FAQ Schema Markup for Rich Snippets */}
+        {post.faqs && post.faqs.length > 0 && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": post.faqs.map(faq => ({
+                  "@type": "Question",
+                  "name": faq.question,
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": faq.answer
+                  }
+                }))
+              })
+            }}
+          />
+        )}
+        
+        {/* Organization Schema for Logo in Search Results */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Softoria",
+              "url": "https://www.softoria.tech",
+              "logo": "https://res.cloudinary.com/dzc11dpii/image/upload/v1763179527/site-logo_cmmgdi.png",
+              "sameAs": [
+                "https://www.linkedin.com/in/rehmankhan301b/",
+                "https://github.com/ImRehmankhan",
+                "https://web.facebook.com/rehman.khan.246606"
+              ],
+              "founder": {
+                "@type": "Person",
+                "name": "Muhammad Rehman",
+                "jobTitle": "Full-Stack Developer"
+              }
             })
           }}
         />

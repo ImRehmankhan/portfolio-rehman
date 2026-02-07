@@ -5,7 +5,7 @@ export default function PrivacyPolicy() {
   return (
     <>
       <Head>
-        <title>Privacy Policy — Softoria</title>
+        <title>Privacy Policy — Softoria | Muhammad Rehman Portfolio</title>
         <meta name="description" content="Privacy Policy for Softoria (Muhammad Rehman). Learn how we collect, use and protect your information." />
         <link rel="canonical" href="https://www.softoria.tech/privacy-policy" />
       </Head>

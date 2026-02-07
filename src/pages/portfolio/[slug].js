@@ -27,7 +27,7 @@ export default function ProjectDetail({ project }) {
   return (
     <>
       <Head>
-        <title>{project.title} - Portfolio | Softoria</title>
+        <title>{`${project.title} - Portfolio | Softoria`}</title>
         <meta name="description" content={project.shortDescription} />
         <meta name="keywords" content={`${project.technologies.join(', ')}, portfolio, web development, ${project.category}`} />
         <meta name="author" content="Muhammad Rehman" />

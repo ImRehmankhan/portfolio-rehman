@@ -58,6 +58,45 @@ export default function Home() {
             }),
           }}
         />
+        
+        {/* Organization Schema for Logo in Search Results */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Softoria",
+              "alternateName": "Softoria Tech",
+              "url": "https://www.softoria.tech",
+              "logo": "https://res.cloudinary.com/dzc11dpii/image/upload/v1763179527/site-logo_cmmgdi.png",
+              "image": "https://res.cloudinary.com/dzc11dpii/image/upload/v1763179527/site-logo_cmmgdi.png",
+              "description": "Professional web and mobile development services. Building fast, scalable applications with React, Next.js, Node.js, and React Native.",
+              "sameAs": [
+                "https://www.linkedin.com/in/rehmankhan301b/",
+                "https://github.com/ImRehmankhan",
+                "https://web.facebook.com/rehman.khan.246606"
+              ],
+              "founder": {
+                "@type": "Person",
+                "name": "Muhammad Rehman",
+                "jobTitle": "Full-Stack Developer",
+                "url": "https://www.softoria.tech/about"
+              },
+              "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "PK",
+                "addressLocality": "Islamabad"
+              },
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "Customer Service",
+                "email": "rehmanattock30@gmail.com",
+                "url": "https://www.softoria.tech/contact"
+              }
+            }),
+          }}
+        />
       </Head>
       <section className="section bg-red-500 hero-modern">
         <div className="container max-w-7xl mx-auto w-full sm:px-6 lg:px-8">
